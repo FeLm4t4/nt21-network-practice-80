@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="NT21の配布資料をもとにした、少し難しめのネットワーク演習80問。説明問題30問、解答・解説・参照PDFページ付き。">
+  <meta name="description" content="NT21の配布資料と公認カンペの用語・基本事項を確認する演習80問。説明問題30問、解答・解説・参照PDFページ付き。">
+  <meta name="nt21-revision" content="classroom-v2">
   <meta name="theme-color" content="#07111f">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307111f'/%3E%3Cpath d='M15 18h34v9H37v21H27V27H15z' fill='%2373e2c3'/%3E%3C/svg%3E">
-  <title>NT21 NETWORK PRACTICE 80</title>
+  <title>ネットワーク演習80問 | 授業範囲版</title>
   <style>
     :root {
       color-scheme: dark;
@@ -661,18 +662,6 @@
       padding-left: 1.35em;
     }
 
-    .reference-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 14px;
-      margin-top: 16px;
-    }
-
-    .reference-links a {
-      font-size: 0.84rem;
-      font-weight: 700;
-    }
-
     .utility-row {
       display: flex;
       flex-wrap: wrap;
@@ -855,18 +844,18 @@
     }
   </style>
 </head>
-<body>
+<body data-revision="classroom-v2">
   <a class="skip-link" href="#questions">問題へ移動</a>
   <header class="site-header">
     <div class="header-inner">
-      <p class="eyebrow">NT21 · NETWORK PRACTICE LAB</p>
+      <p class="eyebrow">NT21 · 授業の復習</p>
       <h1>80問で仕上げる<span class="title-accent">ネットワーク演習</span></h1>
-      <p class="lead">配布資料と公認カンペを横断し、暗記だけでは解けない比較・理由説明・構成読解・サブネット計算へ組み直しました。解答を開くまで範囲は見えません。</p>
+      <p class="lead">配布資料と公認カンペの用語・基本事項を確認する問題集です。説明問題は短い文章で答えられる内容にしました。解答を開くまで範囲は表示しません。</p>
       <div class="stat-grid" aria-label="問題集の概要">
-        <div class="stat-card"><span class="stat-value">80</span><span class="stat-label">TOTAL QUESTIONS</span></div>
-        <div class="stat-card"><span class="stat-value">30</span><span class="stat-label">EXPLANATION</span></div>
-        <div class="stat-card"><span class="stat-value">8</span><span class="stat-label">SOURCE PDFs</span></div>
-        <div class="stat-card"><span class="stat-value">M+</span><span class="stat-label">やや難しめ</span></div>
+        <div class="stat-card"><span class="stat-value">80</span><span class="stat-label">全問題数</span></div>
+        <div class="stat-card"><span class="stat-value">30</span><span class="stat-label">説明問題</span></div>
+        <div class="stat-card"><span class="stat-value">8</span><span class="stat-label">参照PDF</span></div>
+        <div class="stat-card"><span class="stat-value">基礎</span><span class="stat-label">授業範囲の確認</span></div>
       </div>
     </div>
   </header>
@@ -875,11 +864,11 @@
     <section class="study-note" aria-label="学習ガイド">
       <div class="note-card">
         <h2>まず自力で答えてから、根拠まで確認</h2>
-        <p>初期順は資料順と無関係に<strong>固定シャッフル済み</strong>です。「できた」はこの端末に保存されます。旧来の授業ルールと現行標準が違う箇所は、解答内で両方を区別しています。</p>
+        <p>授業範囲に絞って内容を見直した改訂版です。初期順は<strong>ランダムに並べ替え済み</strong>です。「できた」は改訂版用に新しく記録し、旧版の記録は削除しません。</p>
       </div>
       <div class="progress-card">
         <div class="progress-top">
-          <span class="progress-label">Mastery</span>
+          <span class="progress-label">できた問題</span>
           <span class="progress-value" id="progressValue">0 / 80</span>
         </div>
         <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
@@ -888,13 +877,12 @@
 
     <section class="toolbar" aria-label="問題の操作">
       <label class="search-wrap">
-        <span class="visually-hidden"></span>
         <input id="questionSearch" type="search" placeholder="問題文を検索" autocomplete="off" aria-label="問題文を検索">
       </label>
       <label>
         <select id="typeFilter" aria-label="問題形式で絞り込む">
           <option value="all">すべての形式</option>
-          <option value="計算">計算</option><option value="穴埋め">穴埋め</option><option value="四択">四択</option><option value="正誤">正誤</option><option value="説明">説明</option><option value="対応">対応</option><option value="読解">読解</option><option value="並べ替え">並べ替え</option>
+          <option value="計算">計算</option><option value="穴埋め">穴埋め</option><option value="四択">四択</option><option value="正誤">正誤</option><option value="説明">説明</option><option value="対応">対応</option><option value="並べ替え">並べ替え</option>
         </select>
       </label>
       <div class="toolbar-actions">
@@ -910,7 +898,7 @@
 
     <section class="question-list" id="questions" aria-label="演習問題一覧">
       
-    <article class="question-card" data-question-id="q65" data-question-type="計算" data-search-text="192.168.10.0/24を/26で区切る。現代のcidrとして得られる全サブネットのネットワークアドレスと、1サブネット当たりの通常の利用可能ホスト数を答えなさい。 192.168.10.0/26、.64/26、.128/26、.192/26の4サブネット。各64アドレスで、通常の利用可能ホスト数は62台。 ネットワーク層 - /26のブロック計算">
+    <article class="question-card" data-question-id="q65" data-question-type="計算" data-search-text="クラスcの192.168.10.0にサブネットマスク255.255.255.192を設定した。マスクの最後の8ビットは11000000である。サブネット数を求めなさい。ただし、この問題では資料の式「2^n−2」（nはサブネット用に借りたビット数）を使う。 2個 ネットワーク層 - サブネット数の計算">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 1">Q.01</span>
@@ -921,7 +909,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">192.168.10.0/24を/26で区切る。現代のCIDRとして得られる全サブネットのネットワークアドレスと、1サブネット当たりの通常の利用可能ホスト数を答えなさい。</p>
+      <p class="question-prompt">クラスCの192.168.10.0にサブネットマスク255.255.255.192を設定した。マスクの最後の8ビットは11000000である。サブネット数を求めなさい。ただし、この問題では資料の式「2^n−2」（nはサブネット用に借りたビット数）を使う。</p>
       
       <details class="answer-details">
         <summary>
@@ -930,12 +918,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">192.168.10.0/26、.64/26、.128/26、.192/26の4サブネット。各64アドレスで、通常の利用可能ホスト数は62台。</p>
-          <p class="explanation-text">ブロック幅は256-192=64。各サブネット内のネットワークアドレスとブロードキャストアドレスを除く。</p>
+          <p class="answer-text">2個</p>
+          <p class="explanation-text">サブネット用に借りたビットは2つ。この問題で使う資料の計算方法では、2^2-2=2個となる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - /26のブロック計算</span>
+              <span>ネットワーク層 - サブネット数の計算</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -943,7 +931,12 @@
         <li>
           <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.6-7</span>
+          <span>PDF p.7</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.2</span>
         </li></ul>
             </div>
           </div>
@@ -951,7 +944,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q36" data-question-type="計算" data-search-text="macアドレス b8-6b-23-57-34-bf は、16進数何桁・何バイト・何ビットか。また教材上のベンダーコードはどこか。 16進数12桁、6バイト、48ビット。前半6桁（b8-6b-23、24ビット）がベンダーコードである。 データリンク層 - macアドレス表記">
+    <article class="question-card" data-question-id="q36" data-question-type="計算" data-search-text="macアドレスが48ビットで表されているとき、1バイト=8ビットとして、何バイトか求めなさい。 6バイト。 データリンク層 - macアドレスの長さ">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 2">Q.02</span>
@@ -962,7 +955,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">MACアドレス B8-6B-23-57-34-BF は、16進数何桁・何バイト・何ビットか。また教材上のベンダーコードはどこか。</p>
+      <p class="question-prompt">MACアドレスが48ビットで表されているとき、1バイト=8ビットとして、何バイトか求めなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -971,12 +964,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">16進数12桁、6バイト、48ビット。前半6桁（B8-6B-23、24ビット）がベンダーコードである。</p>
-          <p class="explanation-text">16進数1桁は4ビットなので12×4=48ビット。後半6桁はベンダー内識別子。</p>
+          <p class="answer-text">6バイト。</p>
+          <p class="explanation-text">48÷8=6なので、48ビットは6バイトである。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>データリンク層 - MACアドレス表記</span>
+              <span>データリンク層 - MACアドレスの長さ</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -984,7 +977,12 @@
         <li>
           <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.5-6</span>
+          <span>PDF p.5</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -992,7 +990,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q71" data-question-type="説明" data-search-text="ルータとデフォルトゲートウェイの役割を、同一ネットワーク宛てと別ネットワーク宛ての違いに触れて説明しなさい。 同一サブネット内の相手には端末が直接フレームを送れる。別サブネット宛てでは、端末は出入口として設定されたデフォルトゲートウェイのルータへパケットを渡す。ルータは宛先ipとルーティングテーブルから次の転送先を選び、異なるネットワークへ中継する。 ネットワーク層 - ルータ / デフォルトゲートウェイ">
+    <article class="question-card" data-question-id="q71" data-question-type="説明" data-search-text="デフォルトゲートウェイとは何か。また、別のネットワークと通信するときにどのように使うか説明しなさい。 デフォルトゲートウェイは、ネットワークの出入り口となるルータのアドレスである。別のネットワークへ送るパケットを、このルータへ転送する。 ネットワーク層 - デフォルトゲートウェイ">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 3">Q.03</span>
@@ -1003,7 +1001,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">ルータとデフォルトゲートウェイの役割を、同一ネットワーク宛てと別ネットワーク宛ての違いに触れて説明しなさい。</p>
+      <p class="question-prompt">デフォルトゲートウェイとは何か。また、別のネットワークと通信するときにどのように使うか説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -1012,12 +1010,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">同一サブネット内の相手には端末が直接フレームを送れる。別サブネット宛てでは、端末は出入口として設定されたデフォルトゲートウェイのルータへパケットを渡す。ルータは宛先IPとルーティングテーブルから次の転送先を選び、異なるネットワークへ中継する。</p>
-          <p class="explanation-text">デフォルトゲートウェイは『外部の最終宛先』ではなく、端末から見た最初のルータのアドレスである。</p>
+          <p class="answer-text">デフォルトゲートウェイは、ネットワークの出入り口となるルータのアドレスである。別のネットワークへ送るパケットを、このルータへ転送する。</p>
+          <p class="explanation-text">ルータが、受け取ったパケットを別のネットワークへ転送する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - ルータ / デフォルトゲートウェイ</span>
+              <span>ネットワーク層 - デフォルトゲートウェイ</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1025,7 +1023,7 @@
         <li>
           <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.12-14</span>
+          <span>PDF p.13-14</span>
         </li></ul>
             </div>
           </div>
@@ -1033,7 +1031,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q14" data-question-type="説明" data-search-text="電気的ノイズの多い工場でツイストペアケーブルを選ぶ。stpとutpのどちらが適するか、価格とのトレードオフも含めて説明しなさい。 一般にはシールドを持ちノイズに強いstpが適する。ただしutpより高価で、施工や接地を適切に行う必要がある。ノイズが少なくコストを優先する通常環境では、安価なutpが選ばれやすい。 物理層 - stp / utp">
+    <article class="question-card" data-question-id="q14" data-question-type="説明" data-search-text="stpとutpを、ノイズへの強さと価格の2点で比べて説明しなさい。 stpはシールド付きで、ノイズに強いが高価である。utpはシールドがなく、stpよりノイズに弱いが安価である。 物理層 - stpとutp">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 4">Q.04</span>
@@ -1044,7 +1042,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">電気的ノイズの多い工場でツイストペアケーブルを選ぶ。STPとUTPのどちらが適するか、価格とのトレードオフも含めて説明しなさい。</p>
+      <p class="question-prompt">STPとUTPを、ノイズへの強さと価格の2点で比べて説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -1053,12 +1051,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">一般にはシールドを持ちノイズに強いSTPが適する。ただしUTPより高価で、施工や接地を適切に行う必要がある。ノイズが少なくコストを優先する通常環境では、安価なUTPが選ばれやすい。</p>
-          <p class="explanation-text">『STPは常に優れる』ではなく、耐ノイズ性と費用・施工条件を比較する。</p>
+          <p class="answer-text">STPはシールド付きで、ノイズに強いが高価である。UTPはシールドがなく、STPよりノイズに弱いが安価である。</p>
+          <p class="explanation-text">STPとUTPは、シールドの有無が異なるツイストペアケーブルである。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - STP / UTP</span>
+              <span>物理層 - STPとUTP</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1079,7 +1077,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q56" data-question-type="四択" data-search-text="旧来のクラスフル分類でipv4アドレス 99.1.2.3 はどのクラスか。 a. クラスa ネットワーク層 - アドレスクラス">
+    <article class="question-card" data-question-id="q56" data-question-type="四択" data-search-text="資料のアドレスクラスで、ipアドレス99.1.2.3はどのクラスか。 a. クラスa ネットワーク層 - アドレスクラス">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 5">Q.05</span>
@@ -1090,7 +1088,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">旧来のクラスフル分類でIPv4アドレス 99.1.2.3 はどのクラスか。</p>
+      <p class="question-prompt">資料のアドレスクラスで、IPアドレス99.1.2.3はどのクラスか。</p>
       <ol class="choices" aria-label="選択肢"><li>A. クラスA</li><li>B. クラスB</li><li>C. クラスC</li><li>D. クラスD</li></ol>
       <details class="answer-details">
         <summary>
@@ -1100,7 +1098,7 @@
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
           <p class="answer-text">A. クラスA</p>
-          <p class="explanation-text">第1オクテット99は1-126の範囲。127/8はループバック用として除く。現代の経路制御はCIDRが基本で、クラス分類は歴史的な学習事項である。</p>
+          <p class="explanation-text">最初の数が99なので、資料にあるクラスAの範囲に入る。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -1120,7 +1118,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q35" data-question-type="説明" data-search-text="教材の48ビットmacアドレスを前半・後半に分けて説明し、『変更不可・世界で唯一』という表現の実務上の注意も述べなさい。 教材では前半24ビットをベンダーコード（oui）、後半24ビットをベンダー内識別子として、インターフェースを識別する48ビット値とする。ただし実務ではosや仮想環境でローカル管理アドレスを設定したり、端末がランダム化したりできるため、常に不変・絶対に世界唯一とは限らない。 データリンク層 - macアドレス">
+    <article class="question-card" data-question-id="q35" data-question-type="説明" data-search-text="資料のmacアドレスの構成について、前半24ビットと後半24ビットがそれぞれ何を表すか説明しなさい。 前半24ビットは、ベンダーコードを表す。後半24ビットは、ベンダー内の識別子を表す。 データリンク層 - macアドレスの構成">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 6">Q.06</span>
@@ -1131,7 +1129,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">教材の48ビットMACアドレスを前半・後半に分けて説明し、『変更不可・世界で唯一』という表現の実務上の注意も述べなさい。</p>
+      <p class="question-prompt">資料のMACアドレスの構成について、前半24ビットと後半24ビットがそれぞれ何を表すか説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -1140,12 +1138,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">教材では前半24ビットをベンダーコード（OUI）、後半24ビットをベンダー内識別子として、インターフェースを識別する48ビット値とする。ただし実務ではOSや仮想環境でローカル管理アドレスを設定したり、端末がランダム化したりできるため、常に不変・絶対に世界唯一とは限らない。</p>
-          <p class="explanation-text">試験では基本の24/24構造を答え、説明では教材の単純化を補正できるとよい。</p>
+          <p class="answer-text">前半24ビットは、ベンダーコードを表す。後半24ビットは、ベンダー内の識別子を表す。</p>
+          <p class="explanation-text">前半・後半は、それぞれ3バイト、16進数6桁である。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>データリンク層 - MACアドレス</span>
+              <span>データリンク層 - MACアドレスの構成</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1153,7 +1151,7 @@
         <li>
           <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.5-6</span>
+          <span>PDF p.5</span>
         </li>
         <li>
           <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
@@ -1166,7 +1164,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q62" data-question-type="説明" data-search-text="組織がproxyサーバを置く利点を、内部ネットワークの隠蔽・通信制御・ログの3点で説明しなさい。 proxyがクライアントの代理で外部へ接続するため、外部から内部端末へ直接通信しにくくできる。危険サイトへのアクセスや感染端末から外部への通信を遮断でき、外部通信のログを残して問題発生時の調査（デジタルフォレンジック）にも使える。 ネットワーク層 - proxyサーバ">
+    <article class="question-card" data-question-id="q62" data-question-type="説明" data-search-text="proxyサーバは誰の代わりに何をするものか説明しなさい。また、通信をログに残す利点を1つ答えなさい。 proxyサーバは、クライアントの代わりにインターネットへアクセスする。外部との通信をログに残すことで、問題があったときに調べて対処できる。 ネットワーク層 - proxyサーバ">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 7">Q.07</span>
@@ -1177,7 +1175,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">組織がProxyサーバを置く利点を、内部ネットワークの隠蔽・通信制御・ログの3点で説明しなさい。</p>
+      <p class="question-prompt">Proxyサーバは誰の代わりに何をするものか説明しなさい。また、通信をログに残す利点を1つ答えなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -1186,8 +1184,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">Proxyがクライアントの代理で外部へ接続するため、外部から内部端末へ直接通信しにくくできる。危険サイトへのアクセスや感染端末から外部への通信を遮断でき、外部通信のログを残して問題発生時の調査（デジタルフォレンジック）にも使える。</p>
-          <p class="explanation-text">Proxyだけですべての脅威を防げるわけではないが、境界での可視化・制御に役立つ。</p>
+          <p class="answer-text">Proxyサーバは、クライアントの代わりにインターネットへアクセスする。外部との通信をログに残すことで、問題があったときに調べて対処できる。</p>
+          <p class="explanation-text">Proxyは「代理」という意味である。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -1200,11 +1198,6 @@
           <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.2</span>
-        </li>
-        <li>
-          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.2</span>
         </li></ul>
             </div>
           </div>
@@ -1212,7 +1205,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q42" data-question-type="説明" data-search-text="csma/cdとトークンパッシングを、送信権の決め方・衝突・高負荷時の予測可能性で比較しなさい。 csma/cdは媒体が空けば各端末が競争して送信するため、低負荷時はすぐ送れるが、同時送信による衝突と再送があり高負荷時の待ち時間を予測しにくい。トークンパッシングはトークンを得た端末だけが送信するため衝突しにくく、送信機会を計画しやすいが、トークンを待つ必要がある。 データリンク層 - csma/cdとtoken ring">
+    <article class="question-card" data-question-id="q42" data-question-type="説明" data-search-text="トークンリングのトークンは何を表すか。また、どの機器が通信できるか説明しなさい。 トークンは発言権を表す。回ってきたトークンを受け取った機器が通信できる。 データリンク層 - トークンリング">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 8">Q.08</span>
@@ -1223,7 +1216,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">CSMA/CDとトークンパッシングを、送信権の決め方・衝突・高負荷時の予測可能性で比較しなさい。</p>
+      <p class="question-prompt">トークンリングのトークンは何を表すか。また、どの機器が通信できるか説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -1232,12 +1225,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">CSMA/CDは媒体が空けば各端末が競争して送信するため、低負荷時はすぐ送れるが、同時送信による衝突と再送があり高負荷時の待ち時間を予測しにくい。トークンパッシングはトークンを得た端末だけが送信するため衝突しにくく、送信機会を計画しやすいが、トークンを待つ必要がある。</p>
-          <p class="explanation-text">『早い者勝ち』と『発言権が巡回』を負荷特性へ結び付ける。</p>
+          <p class="answer-text">トークンは発言権を表す。回ってきたトークンを受け取った機器が通信できる。</p>
+          <p class="explanation-text">この方法をトークンパッシング方式という。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>データリンク層 - CSMA/CDとToken Ring</span>
+              <span>データリンク層 - トークンリング</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1245,7 +1238,7 @@
         <li>
           <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.8-15</span>
+          <span>PDF p.15-16</span>
         </li>
         <li>
           <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
@@ -1258,7 +1251,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q76" data-question-type="説明" data-search-text="pc-aから別ネットワークのpc-cへルータ経由で送るとき、宛先ipアドレスと宛先macアドレスが各区間でどのように扱われるか説明しなさい。 通常、ipパケットの宛先ipは最終宛先pc-cのままルーティングされる。一方、データリンク層のフレームはリンクごとに作り直されるため、最初の宛先macはデフォルトゲートウェイ、次の区間では次ホップ機器というように変わる。各区間で必要なmacをarp等で解決する。 ネットワーク層 - ipとmacの役割分担">
+    <article class="question-card" data-question-id="q76" data-question-type="説明" data-search-text="ipアドレスとmacアドレスは、それぞれどのような相手との通信で使われるか説明しなさい。 ipアドレスは、送信元・宛先となる端末を表し、目的地との通信に使う。macアドレスは、直接接続しているネットワーク内の相手との通信に使う。 ネットワーク層 - ipアドレスとmacアドレス">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 9">Q.09</span>
@@ -1269,7 +1262,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">PC-Aから別ネットワークのPC-Cへルータ経由で送るとき、宛先IPアドレスと宛先MACアドレスが各区間でどのように扱われるか説明しなさい。</p>
+      <p class="question-prompt">IPアドレスとMACアドレスは、それぞれどのような相手との通信で使われるか説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -1278,21 +1271,16 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">通常、IPパケットの宛先IPは最終宛先PC-Cのままルーティングされる。一方、データリンク層のフレームはリンクごとに作り直されるため、最初の宛先MACはデフォルトゲートウェイ、次の区間では次ホップ機器というように変わる。各区間で必要なMACをARP等で解決する。</p>
-          <p class="explanation-text">IPは終点の識別、MACはそのリンク上の次の受け手の識別という役割差を押さえる。NATを通る場合はIPも変換され得る。</p>
+          <p class="answer-text">IPアドレスは、送信元・宛先となる端末を表し、目的地との通信に使う。MACアドレスは、直接接続しているネットワーク内の相手との通信に使う。</p>
+          <p class="explanation-text">目的地を表すIPアドレスと、直接接続している範囲で使うMACアドレスを区別する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - IPとMACの役割分担</span>
+              <span>ネットワーク層 - IPアドレスとMACアドレス</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
               <ul>
-        <li>
-          <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.12-17</span>
-        </li>
         <li>
           <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
           <span aria-hidden="true">·</span>
@@ -1304,7 +1292,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q01" data-question-type="説明" data-search-text="lanとwanの違いを説明し、インターネットを両者の関係で位置付けなさい。 lanは家庭・学校・企業など比較的限られた範囲のネットワーク、wanは複数のlanなどを広域に結ぶネットワークである。インターネットは世界中の多数のネットワークが相互接続した、世界規模のwanと捉えられる。 導入 - lan / wan / インターネット">
+    <article class="question-card" data-question-id="q01" data-question-type="説明" data-search-text="lanとwanの違いを、ネットワークの範囲に注目して説明しなさい。 lanは、家庭や学校などの限られた範囲のネットワークである。wanは、離れた場所にある複数のlanをまとめた広い範囲のネットワークである。 導入 - lanとwan">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 10">Q.10</span>
@@ -1315,7 +1303,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">LANとWANの違いを説明し、インターネットを両者の関係で位置付けなさい。</p>
+      <p class="question-prompt">LANとWANの違いを、ネットワークの範囲に注目して説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -1324,12 +1312,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">LANは家庭・学校・企業など比較的限られた範囲のネットワーク、WANは複数のLANなどを広域に結ぶネットワークである。インターネットは世界中の多数のネットワークが相互接続した、世界規模のWANと捉えられる。</p>
-          <p class="explanation-text">単に距離の大小だけでなく、複数のLANを広域に束ねる関係まで説明できるとよい。</p>
+          <p class="answer-text">LANは、家庭や学校などの限られた範囲のネットワークである。WANは、離れた場所にある複数のLANをまとめた広い範囲のネットワークである。</p>
+          <p class="explanation-text">資料では、WANはLANを束ねるものとして説明されている。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>導入 - LAN / WAN / インターネット</span>
+              <span>導入 - LANとWAN</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1350,7 +1338,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q12" data-question-type="並べ替え" data-search-text="osi参照モデルを上位層から下位層へ並べなさい。ネットワーク／物理／セッション／アプリケーション／データリンク／トランスポート／プレゼンテーション アプリケーション → プレゼンテーション → セッション → トランスポート → ネットワーク → データリンク → 物理 osi参照モデル - 7階層">
+    <article class="question-card" data-question-id="q12" data-question-type="並べ替え" data-search-text="osi参照モデルを第7層から第1層の順に並べなさい。ネットワーク層／物理層／セッション層／アプリケーション層／データリンク層／トランスポート層／プレゼンテーション層 アプリケーション層 → プレゼンテーション層 → セッション層 → トランスポート層 → ネットワーク層 → データリンク層 → 物理層 osi参照モデル - 7つの階層">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 11">Q.11</span>
@@ -1361,7 +1349,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">OSI参照モデルを上位層から下位層へ並べなさい。ネットワーク／物理／セッション／アプリケーション／データリンク／トランスポート／プレゼンテーション</p>
+      <p class="question-prompt">OSI参照モデルを第7層から第1層の順に並べなさい。ネットワーク層／物理層／セッション層／アプリケーション層／データリンク層／トランスポート層／プレゼンテーション層</p>
       
       <details class="answer-details">
         <summary>
@@ -1370,12 +1358,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">アプリケーション → プレゼンテーション → セッション → トランスポート → ネットワーク → データリンク → 物理</p>
-          <p class="explanation-text">第7層から第1層の順。役割を『利用者向けサービス』から『信号と媒体』へ降りる流れで覚える。</p>
+          <p class="answer-text">アプリケーション層 → プレゼンテーション層 → セッション層 → トランスポート層 → ネットワーク層 → データリンク層 → 物理層</p>
+          <p class="explanation-text">第7層がアプリケーション層、第1層が物理層である。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>OSI参照モデル - 7階層</span>
+              <span>OSI参照モデル - 7つの階層</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1383,7 +1371,12 @@
         <li>
           <cite>NT21 配布資料 01 ネットワークって何.pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.8-9</span>
+          <span>PDF p.9</span>
+        </li>
+        <li>
+          <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.3</span>
         </li>
         <li>
           <cite>NT21課題01欠席者レポート.pdf</cite>
@@ -1396,7 +1389,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q57" data-question-type="四択" data-search-text="127.0.0.1の最も適切な用途はどれか。 a. 自分自身のtcp/ip処理を確認するループバック ネットワーク層 - ループバックアドレス">
+    <article class="question-card" data-question-id="q57" data-question-type="四択" data-search-text="127.0.0.1の説明として正しいものはどれか。 a. 自分自身を表すループバックアドレス ネットワーク層 - ループバックアドレス">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 12">Q.12</span>
@@ -1407,8 +1400,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">127.0.0.1の最も適切な用途はどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. 自分自身のTCP/IP処理を確認するループバック</li><li>B. 同一LAN全体へのブロードキャスト</li><li>C. DHCP障害時の自動割当</li><li>D. 公開Webサーバ用グローバルIP</li></ol>
+      <p class="question-prompt">127.0.0.1の説明として正しいものはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. 自分自身を表すループバックアドレス</li><li>B. 自分のネットワーク全体を表すブロードキャストアドレス</li><li>C. 外部のルータを表すデフォルトゲートウェイ</li><li>D. 組織内で自由に設定するプライベートIPアドレス</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -1416,8 +1409,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">A. 自分自身のTCP/IP処理を確認するループバック</p>
-          <p class="explanation-text">127/8はホスト内部のループバック用で、外部ネットワークへ流してはならない。</p>
+          <p class="answer-text">A. 自分自身を表すループバックアドレス</p>
+          <p class="explanation-text">ループバックアドレスは自分自身を表し、他の機器との通信には使わない。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -1437,19 +1430,19 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q26" data-question-type="計算" data-search-text="資料のマンチェスタ方式（low→highを1、high→lowを0）に従う。6ビットの中央遷移が順に『low→high、high→low、low→high、low→high、high→low、high→low』なら、ビット列を答えなさい。 101100 物理層 - マンチェスタ方式">
+    <article class="question-card" data-question-id="q26" data-question-type="四択" data-search-text="資料で、有線のネットワークメディアに分類される組合せはどれか。 b. ツイストペアケーブルと光ファイバー 物理層 - 有線と無線">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 13">Q.13</span>
-          <span class="type-badge">計算</span>
+          <span class="type-badge">四択</span>
         </div>
         <label class="mastery-check">
           <input type="checkbox" data-mastery-checkbox aria-label="この問題を習得済みにする">
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">資料のマンチェスタ方式（LOW→HIGHを1、HIGH→LOWを0）に従う。6ビットの中央遷移が順に『LOW→HIGH、HIGH→LOW、LOW→HIGH、LOW→HIGH、HIGH→LOW、HIGH→LOW』なら、ビット列を答えなさい。</p>
-      
+      <p class="question-prompt">資料で、有線のネットワークメディアに分類される組合せはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. 電波と赤外線</li><li>B. ツイストペアケーブルと光ファイバー</li><li>C. 電波と同軸ケーブル</li><li>D. 赤外線と光ファイバー</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -1457,12 +1450,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">101100</p>
-          <p class="explanation-text">各ビット中央の遷移方向を順に資料の定義へ当てはめる。マンチェスタ符号の0/1対応は規約により逆に表す場合があるため、この問題では資料の極性定義を明示している。</p>
+          <p class="answer-text">B. ツイストペアケーブルと光ファイバー</p>
+          <p class="explanation-text">ツイストペアケーブルや光ファイバーは有線、電波や赤外線は無線に分類される。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - マンチェスタ方式</span>
+              <span>物理層 - 有線と無線</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1470,12 +1463,17 @@
         <li>
           <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.20</span>
+          <span>PDF p.10</span>
         </li>
         <li>
           <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.7</span>
+          <span>PDF p.4</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -1483,7 +1481,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q51" data-question-type="四択" data-search-text="全二重通信と半二重通信の組合せとして正しいものはどれか。 a. 全二重は同時送受信可、半二重は片方向ずつ データリンク層 - 全二重 / 半二重">
+    <article class="question-card" data-question-id="q51" data-question-type="四択" data-search-text="1台のスイッチから複数のスイッチへ枝分かれし、さらに各pcへ枝分かれして接続する構成を何というか。 a. ツリー構造 データリンク層 - ネットワーク構築の基本">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 14">Q.14</span>
@@ -1494,8 +1492,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">全二重通信と半二重通信の組合せとして正しいものはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. 全二重は同時送受信可、半二重は片方向ずつ</li><li>B. 全二重は受信のみ、半二重は送信のみ</li><li>C. 両方とも必ず衝突する</li><li>D. 半二重だけ同時送受信可</li></ol>
+      <p class="question-prompt">1台のスイッチから複数のスイッチへ枝分かれし、さらに各PCへ枝分かれして接続する構成を何というか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. ツリー構造</li><li>B. バス型</li><li>C. リング型</li><li>D. メッシュ型</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -1503,12 +1501,99 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">A. 全二重は同時送受信可、半二重は片方向ずつ</p>
-          <p class="explanation-text">層のデータ単位を厳密に言う場合、データリンク層では『パケット』より『フレーム』が適切。</p>
+          <p class="answer-text">A. ツリー構造</p>
+          <p class="explanation-text">木の枝のように分かれて接続する形で、資料ではネットワーク構築の基本として示されている。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>データリンク層 - 全二重 / 半二重</span>
+              <span>データリンク層 - ネットワーク構築の基本</span>
+            </div>
+            <div class="source-row">
+              <span class="meta-label">参照</span>
+              <ul>
+        <li>
+          <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.21</span>
+        </li></ul>
+            </div>
+          </div>
+        </div>
+      </details>
+    </article>
+
+    <article class="question-card" data-question-id="q67" data-question-type="計算" data-search-text="この問題では資料の計算方法を使う。220.100.1.0にサブネットマスク255.255.255.240を設定した。マスクの最後の8ビットは11110000である。1つのサブネットに割り当て可能なホスト数を求めなさい。 14台 ネットワーク層 - ホスト数の計算">
+      <div class="question-topline">
+        <div class="question-identifiers">
+          <span class="question-number" aria-label="問題 15">Q.15</span>
+          <span class="type-badge">計算</span>
+        </div>
+        <label class="mastery-check">
+          <input type="checkbox" data-mastery-checkbox aria-label="この問題を習得済みにする">
+          <span>できた</span>
+        </label>
+      </div>
+      <p class="question-prompt">この問題では資料の計算方法を使う。220.100.1.0にサブネットマスク255.255.255.240を設定した。マスクの最後の8ビットは11110000である。1つのサブネットに割り当て可能なホスト数を求めなさい。</p>
+      
+      <details class="answer-details">
+        <summary>
+          <span class="summary-label">解答・解説を見る</span>
+          <span class="summary-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="answer-panel">
+          <p class="answer-kicker">解答例</p>
+          <p class="answer-text">14台</p>
+          <p class="explanation-text">ホスト部は0が並ぶ4ビットなので、2^4-2=14台となる。</p>
+          <div class="answer-meta">
+            <div class="range-row">
+              <span class="meta-label">範囲</span>
+              <span>ネットワーク層 - ホスト数の計算</span>
+            </div>
+            <div class="source-row">
+              <span class="meta-label">参照</span>
+              <ul>
+        <li>
+          <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.8</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.2</span>
+        </li></ul>
+            </div>
+          </div>
+        </div>
+      </details>
+    </article>
+
+    <article class="question-card" data-question-id="q52" data-question-type="説明" data-search-text="全二重通信と半二重通信の違いを、送信と受信を同時にできるかという点から説明しなさい。 全二重通信は、送信と受信を同時に行える。半二重通信は同時には行えず、片方ずつ通信する。 データリンク層 - 全二重と半二重">
+      <div class="question-topline">
+        <div class="question-identifiers">
+          <span class="question-number" aria-label="問題 16">Q.16</span>
+          <span class="type-badge">説明</span>
+        </div>
+        <label class="mastery-check">
+          <input type="checkbox" data-mastery-checkbox aria-label="この問題を習得済みにする">
+          <span>できた</span>
+        </label>
+      </div>
+      <p class="question-prompt">全二重通信と半二重通信の違いを、送信と受信を同時にできるかという点から説明しなさい。</p>
+      
+      <details class="answer-details">
+        <summary>
+          <span class="summary-label">解答・解説を見る</span>
+          <span class="summary-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="answer-panel">
+          <p class="answer-kicker">解答例</p>
+          <p class="answer-text">全二重通信は、送信と受信を同時に行える。半二重通信は同時には行えず、片方ずつ通信する。</p>
+          <p class="explanation-text">「同時に送受信できるか」を区別して覚える。</p>
+          <div class="answer-meta">
+            <div class="range-row">
+              <span class="meta-label">範囲</span>
+              <span>データリンク層 - 全二重と半二重</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1524,94 +1609,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q67" data-question-type="計算" data-search-text="192.168.1.0/24を、授業資料の2^n-2規則で少なくとも9個の利用可能サブネットに分割し、ホスト数を最大にする。マスクと各サブネットの利用可能ホスト数を求めなさい。 /28、255.255.255.240、各14ホスト。 ネットワーク層 - 必要サブネット数からのマスク決定">
-      <div class="question-topline">
-        <div class="question-identifiers">
-          <span class="question-number" aria-label="問題 15">Q.15</span>
-          <span class="type-badge">計算</span>
-        </div>
-        <label class="mastery-check">
-          <input type="checkbox" data-mastery-checkbox aria-label="この問題を習得済みにする">
-          <span>できた</span>
-        </label>
-      </div>
-      <p class="question-prompt">192.168.1.0/24を、授業資料の2^n-2規則で少なくとも9個の利用可能サブネットに分割し、ホスト数を最大にする。マスクと各サブネットの利用可能ホスト数を求めなさい。</p>
-      
-      <details class="answer-details">
-        <summary>
-          <span class="summary-label">解答・解説を見る</span>
-          <span class="summary-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="answer-panel">
-          <p class="answer-kicker">解答例</p>
-          <p class="answer-text">/28、255.255.255.240、各14ホスト。</p>
-          <p class="explanation-text">3ビット借用では2^3-2=6で不足、4ビットなら2^4-2=14。残り4ホストビットなので2^4-2=14ホスト。</p>
-          <div class="answer-meta">
-            <div class="range-row">
-              <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - 必要サブネット数からのマスク決定</span>
-            </div>
-            <div class="source-row">
-              <span class="meta-label">参照</span>
-              <ul>
-        <li>
-          <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.10</span>
-        </li>
-        <li>
-          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.2</span>
-        </li></ul>
-            </div>
-          </div>
-        </div>
-      </details>
-    </article>
-
-    <article class="question-card" data-question-id="q52" data-question-type="説明" data-search-text="スイッチと端末を1対1で全二重接続した現代的なethernetで、通常csma/cdを使わない理由を説明しなさい。 各ポートが専用のポイントツーポイントリンクとなって他端末と媒体を共有せず、全二重で同時送受信できるため衝突が発生しない。したがって衝突検出とバックオフを行うcsma/cdは不要である。 データリンク層 - スイッチドethernetの補完">
-      <div class="question-topline">
-        <div class="question-identifiers">
-          <span class="question-number" aria-label="問題 16">Q.16</span>
-          <span class="type-badge">説明</span>
-        </div>
-        <label class="mastery-check">
-          <input type="checkbox" data-mastery-checkbox aria-label="この問題を習得済みにする">
-          <span>できた</span>
-        </label>
-      </div>
-      <p class="question-prompt">スイッチと端末を1対1で全二重接続した現代的なEthernetで、通常CSMA/CDを使わない理由を説明しなさい。</p>
-      
-      <details class="answer-details">
-        <summary>
-          <span class="summary-label">解答・解説を見る</span>
-          <span class="summary-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="answer-panel">
-          <p class="answer-kicker">解答例</p>
-          <p class="answer-text">各ポートが専用のポイントツーポイントリンクとなって他端末と媒体を共有せず、全二重で同時送受信できるため衝突が発生しない。したがって衝突検出とバックオフを行うCSMA/CDは不要である。</p>
-          <p class="explanation-text">CSMA/CDは主に共有媒体・半二重Ethernetの仕組みとして理解する。</p>
-          <div class="answer-meta">
-            <div class="range-row">
-              <span class="meta-label">範囲</span>
-              <span>データリンク層 - スイッチドEthernetの補完</span>
-            </div>
-            <div class="source-row">
-              <span class="meta-label">参照</span>
-              <ul>
-        <li>
-          <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.8-14、19、23</span>
-        </li></ul>
-            </div>
-          </div>
-        </div>
-      </details>
-    </article>
-
-    <article class="question-card" data-question-id="q03" data-question-type="説明" data-search-text="ネットワークでデータを共有すると利便性が上がる一方、管理者がセキュリティを強く意識すべき理由を説明しなさい。 共有によって正当な利用者がアクセスしやすくなる反面、権限設定や防御が不十分だと守秘データを第三者に閲覧・持ち出される恐れがある。また、1台へのマルウェア侵入がネットワーク経由で他端末へ広がる可能性もあるため、認証・権限・更新・監視などを含めて構築・運用する必要がある。 導入 - ネットワークのリスク">
+    <article class="question-card" data-question-id="q03" data-question-type="説明" data-search-text="ネットワークを使うとき、セキュリティに注意する必要がある理由を2つ説明しなさい。 公開したくないデータを、悪意のある者に見られたり盗まれたりする恐れがある。また、コンピュータウイルスがネットワークに侵入すると、ほかのコンピュータにも広がる恐れがある。 導入 - セキュリティ">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 17">Q.17</span>
@@ -1622,7 +1620,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">ネットワークでデータを共有すると利便性が上がる一方、管理者がセキュリティを強く意識すべき理由を説明しなさい。</p>
+      <p class="question-prompt">ネットワークを使うとき、セキュリティに注意する必要がある理由を2つ説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -1631,12 +1629,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">共有によって正当な利用者がアクセスしやすくなる反面、権限設定や防御が不十分だと守秘データを第三者に閲覧・持ち出される恐れがある。また、1台へのマルウェア侵入がネットワーク経由で他端末へ広がる可能性もあるため、認証・権限・更新・監視などを含めて構築・運用する必要がある。</p>
-          <p class="explanation-text">『便利だから危険』ではなく、接続範囲と共有範囲が攻撃や感染の広がりにもなるという因果を書く。</p>
+          <p class="answer-text">公開したくないデータを、悪意のある者に見られたり盗まれたりする恐れがある。また、コンピュータウイルスがネットワークに侵入すると、ほかのコンピュータにも広がる恐れがある。</p>
+          <p class="explanation-text">便利さだけでなく、データが盗まれることやコンピュータウイルスにも注意する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>導入 - ネットワークのリスク</span>
+              <span>導入 - セキュリティ</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1657,7 +1655,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q19" data-question-type="四択" data-search-text="auto mdi/mdi-xを考えず、2台の旧来型ハブをカスケード専用ポート以外で接続する場合のケーブルはどれか。 b. クロス 物理層 - ハブ間接続">
+    <article class="question-card" data-question-id="q19" data-question-type="四択" data-search-text="資料の接続方法で、hub同士をカスケードポート以外でつなぐ場合に使うケーブルはどれか。 b. クロスケーブル 物理層 - hub同士の接続">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 18">Q.18</span>
@@ -1668,8 +1666,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">Auto MDI/MDI-Xを考えず、2台の旧来型ハブをカスケード専用ポート以外で接続する場合のケーブルはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. ストレート</li><li>B. クロス</li><li>C. 電話線</li><li>D. シングルモード光のみ</li></ol>
+      <p class="question-prompt">資料の接続方法で、HUB同士をカスケードポート以外でつなぐ場合に使うケーブルはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. ストレートケーブル</li><li>B. クロスケーブル</li><li>C. 同軸ケーブル</li><li>D. 光ファイバーケーブル</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -1677,12 +1675,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">B. クロス</p>
-          <p class="explanation-text">同種ポート同士なので送信と受信のペアを交差させる。カスケードポートを使う場合はストレートで接続できる。</p>
+          <p class="answer-text">B. クロスケーブル</p>
+          <p class="explanation-text">カスケードポートを使う場合はストレートケーブル、それ以外ではクロスケーブルを使う。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - ハブ間接続</span>
+              <span>物理層 - HUB同士の接続</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1696,6 +1694,11 @@
           <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.8</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -1703,7 +1706,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q72" data-question-type="四択" data-search-text="端末のipとサブネットマスクは正しいが、デフォルトゲートウェイだけが誤っている。最も典型的な症状はどれか。 b. 同一サブネット内は通信できるが、別ネットワークへ出られない ネットワーク層 - デフォルトゲートウェイ障害">
+    <article class="question-card" data-question-id="q72" data-question-type="四択" data-search-text="他の設定は正しいが、デフォルトゲートウェイだけが誤っている。通信の状態として最も適切なものはどれか。 b. 同じネットワークでは通信できるが、別のネットワークへ通信できない ネットワーク層 - デフォルトゲートウェイの設定">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 19">Q.19</span>
@@ -1714,8 +1717,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">端末のIPとサブネットマスクは正しいが、デフォルトゲートウェイだけが誤っている。最も典型的な症状はどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. 同一サブネット内も外部も必ず不可</li><li>B. 同一サブネット内は通信できるが、別ネットワークへ出られない</li><li>C. MACアドレスが消える</li><li>D. LANケーブルがクロスへ変わる</li></ol>
+      <p class="question-prompt">他の設定は正しいが、デフォルトゲートウェイだけが誤っている。通信の状態として最も適切なものはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. 同じネットワークにも別のネットワークにも通信できない</li><li>B. 同じネットワークでは通信できるが、別のネットワークへ通信できない</li><li>C. 同じネットワークでは通信できないが、別のネットワークへ通信できる</li><li>D. 同じネットワークにも別のネットワークにも通信できる</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -1723,12 +1726,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">B. 同一サブネット内は通信できるが、別ネットワークへ出られない</p>
-          <p class="explanation-text">ローカル通信はルータを必要としないが、外部宛てはゲートウェイへ渡す必要がある。</p>
+          <p class="answer-text">B. 同じネットワークでは通信できるが、別のネットワークへ通信できない</p>
+          <p class="explanation-text">同じネットワーク内の通信ではルータは不要だが、別のネットワークへの通信では出入り口となるルータが必要になる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - デフォルトゲートウェイ障害</span>
+              <span>ネットワーク層 - デフォルトゲートウェイの設定</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1749,7 +1752,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q16" data-question-type="説明" data-search-text="10/100base-txの旧来型接続を前提に、ストレートケーブルとクロスケーブルの配線・用途の違いを説明し、auto mdi/mdi-x搭載機器では何が変わるか述べなさい。 ストレートは両端が同じピン配列で、旧来はpcとハブなど異種ポート間に用いた。10/100base-txの基本的なクロスは一端の1・2番と3・6番の送受信ペアを交差させ、旧来はpc同士や通常ポートのハブ同士など同種ポート間に用いた。auto mdi/mdi-x対応機器は送受信ペアを自動判別するため、ケーブル種別を意識せず接続できる。 物理層 - ストレート / クロス / auto mdi-x">
+    <article class="question-card" data-question-id="q16" data-question-type="説明" data-search-text="ストレートケーブルとクロスケーブルの違いを、両端のピン配列に注目して説明しなさい。 ストレートケーブルは、両端が同じピン配列になっている。クロスケーブルは、一部の銅線が交差しているため、両端のピン配列が異なる。 lanケーブル作成 - ストレートとクロス">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 20">Q.20</span>
@@ -1760,7 +1763,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">10/100BASE-TXの旧来型接続を前提に、ストレートケーブルとクロスケーブルの配線・用途の違いを説明し、Auto MDI/MDI-X搭載機器では何が変わるか述べなさい。</p>
+      <p class="question-prompt">ストレートケーブルとクロスケーブルの違いを、両端のピン配列に注目して説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -1769,12 +1772,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">ストレートは両端が同じピン配列で、旧来はPCとハブなど異種ポート間に用いた。10/100BASE-TXの基本的なクロスは一端の1・2番と3・6番の送受信ペアを交差させ、旧来はPC同士や通常ポートのハブ同士など同種ポート間に用いた。Auto MDI/MDI-X対応機器は送受信ペアを自動判別するため、ケーブル種別を意識せず接続できる。</p>
-          <p class="explanation-text">テストでは旧来の使い分けを答えつつ、現代機器の自動判別も区別する。</p>
+          <p class="answer-text">ストレートケーブルは、両端が同じピン配列になっている。クロスケーブルは、一部の銅線が交差しているため、両端のピン配列が異なる。</p>
+          <p class="explanation-text">両端のコネクタを見比べると、配列の違いを確認できる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - ストレート / クロス / Auto MDI-X</span>
+              <span>LANケーブル作成 - ストレートとクロス</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1782,17 +1785,12 @@
         <li>
           <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.13-14、22-23</span>
+          <span>PDF p.13</span>
         </li>
         <li>
           <cite>NT21 配布資料 03 LANケーブル作成(拡大).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.1</span>
-        </li>
-        <li>
-          <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.22</span>
         </li></ul>
             </div>
           </div>
@@ -1800,7 +1798,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q20" data-question-type="説明" data-search-text="シングルモード光ファイバーとマルチモード光ファイバーを、光の進み方・距離・扱いやすさの3点で比較しなさい。 シングルモードは細いコア内を主に1つのモードで光が進み、分散が小さく長距離・高速通信に向くが、機器や施工の精度が求められる。マルチモードは複数の光路で進み、比較的太く扱いやすい一方、モード分散のため一般にシングルモードより短距離向けである。 物理層 - smf / mmf">
+    <article class="question-card" data-question-id="q20" data-question-type="説明" data-search-text="資料で、より長い距離の高速通信に向くとされているのは、シングルモード光ファイバーとマルチモード光ファイバーのどちらか。光の進み方と合わせて説明しなさい。 シングルモード光ファイバーである。レーザ光が細いケーブル内を直線的に伝わり、マルチモードより長距離・高速の通信に向く。 物理層 - 光ファイバーの種類">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 21">Q.21</span>
@@ -1811,7 +1809,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">シングルモード光ファイバーとマルチモード光ファイバーを、光の進み方・距離・扱いやすさの3点で比較しなさい。</p>
+      <p class="question-prompt">資料で、より長い距離の高速通信に向くとされているのは、シングルモード光ファイバーとマルチモード光ファイバーのどちらか。光の進み方と合わせて説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -1820,12 +1818,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">シングルモードは細いコア内を主に1つのモードで光が進み、分散が小さく長距離・高速通信に向くが、機器や施工の精度が求められる。マルチモードは複数の光路で進み、比較的太く扱いやすい一方、モード分散のため一般にシングルモードより短距離向けである。</p>
-          <p class="explanation-text">資料の『直線的』『屈折しながら複数の光』という図解を、距離差の理由まで補った。</p>
+          <p class="answer-text">シングルモード光ファイバーである。レーザ光が細いケーブル内を直線的に伝わり、マルチモードより長距離・高速の通信に向く。</p>
+          <p class="explanation-text">資料では、シングルモードとマルチモードを長距離・高速通信への向き不向きで比較している。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - SMF / MMF</span>
+              <span>物理層 - 光ファイバーの種類</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1833,12 +1831,12 @@
         <li>
           <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.15-17</span>
+          <span>PDF p.16-17</span>
         </li>
         <li>
           <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.5-6</span>
+          <span>PDF p.6</span>
         </li></ul>
             </div>
           </div>
@@ -1846,7 +1844,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q74" data-question-type="四択" data-search-text="同一ipv4 lanで宛先ipアドレスは分かるが、フレーム送信に必要な宛先macアドレスが分からない。使うものはどれか。 a. arp ネットワーク層 - arp / rarp">
+    <article class="question-card" data-question-id="q74" data-question-type="四択" data-search-text="ipアドレスが分かっていて、それに対応するmacアドレスを調べたい。使うプロトコルはどれか。 a. arp ネットワーク層 - arpとrarp">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 22">Q.22</span>
@@ -1857,8 +1855,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">同一IPv4 LANで宛先IPアドレスは分かるが、フレーム送信に必要な宛先MACアドレスが分からない。使うものはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. ARP</li><li>B. RARP</li><li>C. NAT</li><li>D. tracert</li></ol>
+      <p class="question-prompt">IPアドレスが分かっていて、それに対応するMACアドレスを調べたい。使うプロトコルはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. ARP</li><li>B. RARP</li><li>C. NAT</li><li>D. NAPT</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -1867,11 +1865,11 @@
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
           <p class="answer-text">A. ARP</p>
-          <p class="explanation-text">教材ではARPをIP→MAC、RARPをMAC→IPと整理する。RARPは現在ほぼ使われず、IP設定にはDHCP等が使われる。</p>
+          <p class="explanation-text">ARPはIPアドレスからMACアドレスを調べる。RARPはその逆である。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - ARP / RARP</span>
+              <span>ネットワーク層 - ARPとRARP</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1892,7 +1890,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q05" data-question-type="説明" data-search-text="大きなデータをパケットへ分割して送るとき、受信側で元どおりに復元するために必要な考え方を説明しなさい。 送信側はデータを小さな単位へ分割し、各層のプロトコルが宛先や識別子など必要な制御情報を付けて送る。順序制御や再送を提供するプロトコルを使う場合、受信側はその情報を使って欠落・順序を管理し、上位で元のデータを再構成する。すべてのパケットが単独で順序保証を持つわけではない。 導入 - パケット分割と再構成">
+    <article class="question-card" data-question-id="q05" data-question-type="説明" data-search-text="資料のパケットの図に従い、送信側と受信側がそれぞれ何をするか説明しなさい。 送信側はデータをパケットに分け、組み立てに必要な情報を付けて送る。受信側は付けられた情報を使い、パケットを組み立てて元のデータを復元する。 導入 - パケット">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 23">Q.23</span>
@@ -1903,7 +1901,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">大きなデータをパケットへ分割して送るとき、受信側で元どおりに復元するために必要な考え方を説明しなさい。</p>
+      <p class="question-prompt">資料のパケットの図に従い、送信側と受信側がそれぞれ何をするか説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -1912,12 +1910,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">送信側はデータを小さな単位へ分割し、各層のプロトコルが宛先や識別子など必要な制御情報を付けて送る。順序制御や再送を提供するプロトコルを使う場合、受信側はその情報を使って欠落・順序を管理し、上位で元のデータを再構成する。すべてのパケットが単独で順序保証を持つわけではない。</p>
-          <p class="explanation-text">資料では総称的にパケットとしているが、厳密な名称は層によりセグメント、パケット、フレームなどと変わり、信頼性は利用プロトコルに依存する。</p>
+          <p class="answer-text">送信側はデータをパケットに分け、組み立てに必要な情報を付けて送る。受信側は付けられた情報を使い、パケットを組み立てて元のデータを復元する。</p>
+          <p class="explanation-text">送信側は分けて送り、受信側は組み立てるという流れを押さえる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>導入 - パケット分割と再構成</span>
+              <span>導入 - パケット</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1930,7 +1928,7 @@
         <li>
           <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.1-2</span>
+          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -1938,7 +1936,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q07" data-question-type="四択" data-search-text="欠落データの再送や順序制御によって、端末間通信の信頼性を高める役割に最も対応する層はどれか。 c. トランスポート層（第4層） osi参照モデル - 第4層">
+    <article class="question-card" data-question-id="q07" data-question-type="四択" data-search-text="資料で「信頼性の確保、再送」を担当するとされている層はどれか。 c. トランスポート層（第4層） osi参照モデル - トランスポート層">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 24">Q.24</span>
@@ -1949,7 +1947,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">欠落データの再送や順序制御によって、端末間通信の信頼性を高める役割に最も対応する層はどれか。</p>
+      <p class="question-prompt">資料で「信頼性の確保、再送」を担当するとされている層はどれか。</p>
       <ol class="choices" aria-label="選択肢"><li>A. 物理層</li><li>B. ネットワーク層</li><li>C. トランスポート層</li><li>D. アプリケーション層</li></ol>
       <details class="answer-details">
         <summary>
@@ -1959,11 +1957,11 @@
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
           <p class="answer-text">C. トランスポート層（第4層）</p>
-          <p class="explanation-text">教材では『信頼性の確保、再送』を第4層の役割としている。実際の信頼性の有無はTCPやUDPなど利用するプロトコルで異なる。</p>
+          <p class="explanation-text">トランスポート層は、届かなかったデータを再送するなど、信頼性を確保する役割を持つ。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>OSI参照モデル - 第4層</span>
+              <span>OSI参照モデル - トランスポート層</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -1977,6 +1975,11 @@
           <cite>NT21課題01欠席者レポート.pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.1</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -1984,7 +1987,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q02" data-question-type="説明" data-search-text="ネットワーク導入の代表的な利点を2つ挙げ、スタンドアローン環境より便利になる理由を具体例付きで説明しなさい。 ①情報（データ）の共有: usbメモリなどを受け渡さず複数端末から同じデータを利用できる。②機器（ハードウェア）の共有: 複数端末から1台のプリンタなどを共同利用できる。共有されるデータや機器を共有資源という。 導入 - ネットワークの利点と共有資源">
+    <article class="question-card" data-question-id="q02" data-question-type="説明" data-search-text="ネットワークを導入する利点を、データとプリンターについて1つずつ説明しなさい。 データを共有できるため、usbメモリなどを受け渡さずにやり取りできる。機器を共有できるため、複数のコンピュータから1台のプリンターを使える。 導入 - データと機器の共有">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 25">Q.25</span>
@@ -1995,7 +1998,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">ネットワーク導入の代表的な利点を2つ挙げ、スタンドアローン環境より便利になる理由を具体例付きで説明しなさい。</p>
+      <p class="question-prompt">ネットワークを導入する利点を、データとプリンターについて1つずつ説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2004,12 +2007,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">①情報（データ）の共有: USBメモリなどを受け渡さず複数端末から同じデータを利用できる。②機器（ハードウェア）の共有: 複数端末から1台のプリンタなどを共同利用できる。共有されるデータや機器を共有資源という。</p>
-          <p class="explanation-text">利点名だけでなく、媒体の受け渡しや機器の重複購入が不要になる点まで述べる。</p>
+          <p class="answer-text">データを共有できるため、USBメモリなどを受け渡さずにやり取りできる。機器を共有できるため、複数のコンピュータから1台のプリンターを使える。</p>
+          <p class="explanation-text">ネットワークで共有されるデータや機器を、共有資源という。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>導入 - ネットワークの利点と共有資源</span>
+              <span>導入 - データと機器の共有</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2030,7 +2033,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q13" data-question-type="説明" data-search-text="物理層が0と1を送る仕組みを、媒体・信号・コネクタという語を用いて説明しなさい。 物理層は上位から渡されたビット列の0と1を、銅線なら電圧の変化、光ファイバーなら光の点滅などの物理信号へ変換して媒体上へ送る。また、ケーブルやコネクタの形状・電気的条件なども規定する。 物理層 - 役割">
+    <article class="question-card" data-question-id="q13" data-question-type="説明" data-search-text="物理層では0と1をどのような形に変えて送るか。電圧と光について説明しなさい。 電気信号では、0と1を電圧の高低に変えて送る。光を使う場合は、0と1を光の点滅に変えて送る。 物理層 - 0と1の伝送">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 26">Q.26</span>
@@ -2041,7 +2044,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">物理層が0と1を送る仕組みを、媒体・信号・コネクタという語を用いて説明しなさい。</p>
+      <p class="question-prompt">物理層では0と1をどのような形に変えて送るか。電圧と光について説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2050,12 +2053,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">物理層は上位から渡されたビット列の0と1を、銅線なら電圧の変化、光ファイバーなら光の点滅などの物理信号へ変換して媒体上へ送る。また、ケーブルやコネクタの形状・電気的条件なども規定する。</p>
-          <p class="explanation-text">物理層は宛先IPやMACで転送先を判断する層ではなく、ビットを実際に運ぶ土台である。</p>
+          <p class="answer-text">電気信号では、0と1を電圧の高低に変えて送る。光を使う場合は、0と1を光の点滅に変えて送る。</p>
+          <p class="explanation-text">物理層は、0と1を実際の信号に変えて送る役割を持つ。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - 役割</span>
+              <span>物理層 - 0と1の伝送</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2076,7 +2079,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q33" data-question-type="説明" data-search-text="データリンク層が扱う通信範囲と、ネットワークトポロジーの関係を説明しなさい。 データリンク層は同一リンクなど直接接続された機器同士のフレーム通信と媒体アクセスを扱う。その機器や媒体をバス型・リング型・スター型・メッシュ型など、どのような形で接続するかをネットワークトポロジーという。 データリンク層 - 役割とトポロジー">
+    <article class="question-card" data-question-id="q33" data-question-type="説明" data-search-text="データリンク層はどのような機器同士の通信を扱うか。また、ネットワークトポロジーとは何か説明しなさい。 データリンク層は、直接接続している機器同士の通信を規定する。ネットワークトポロジーとは、機器をどのような形で接続するかという接続形態のことである。 データリンク層 - 役割とトポロジー">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 27">Q.27</span>
@@ -2087,7 +2090,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">データリンク層が扱う通信範囲と、ネットワークトポロジーの関係を説明しなさい。</p>
+      <p class="question-prompt">データリンク層はどのような機器同士の通信を扱うか。また、ネットワークトポロジーとは何か説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2096,8 +2099,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">データリンク層は同一リンクなど直接接続された機器同士のフレーム通信と媒体アクセスを扱う。その機器や媒体をバス型・リング型・スター型・メッシュ型など、どのような形で接続するかをネットワークトポロジーという。</p>
-          <p class="explanation-text">複数ネットワークを越えた経路選択は主にネットワーク層の仕事である。</p>
+          <p class="answer-text">データリンク層は、直接接続している機器同士の通信を規定する。ネットワークトポロジーとは、機器をどのような形で接続するかという接続形態のことである。</p>
+          <p class="explanation-text">ネットワークトポロジーの例には、バス型・リング型・スター型・メッシュ型がある。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -2122,18 +2125,18 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q75" data-question-type="読解" data-search-text="資料18ページの更新後ルーティングテーブルで、r1が192.168.3.0/24へ送るときのネクストホップ、送出i/f、metricを答えなさい。 ネクストホップ192.168.1.2、送出i/f f0/1、metric 2。 ネットワーク層 - ルーティングテーブル読解">
+    <article class="question-card" data-question-id="q75" data-question-type="穴埋め" data-search-text="ルータは、ipアドレスと、そのアドレスへ通信するための次のルータの情報を、（　）という表に記憶している。空欄に入る用語を答えなさい。 ルーティングテーブル ネットワーク層 - ルーティングテーブル">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 28">Q.28</span>
-          <span class="type-badge">読解</span>
+          <span class="type-badge">穴埋め</span>
         </div>
         <label class="mastery-check">
           <input type="checkbox" data-mastery-checkbox aria-label="この問題を習得済みにする">
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">資料18ページの更新後ルーティングテーブルで、R1が192.168.3.0/24へ送るときのネクストホップ、送出I/F、Metricを答えなさい。</p>
+      <p class="question-prompt">ルータは、IPアドレスと、そのアドレスへ通信するための次のルータの情報を、（　）という表に記憶している。空欄に入る用語を答えなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2142,12 +2145,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">ネクストホップ192.168.1.2、送出I/F F0/1、Metric 2。</p>
-          <p class="explanation-text">R1からR2、さらにR3側へ進む2段の経路として表に記録されている。ルーティングテーブルは宛先ネットワーク、次ホップ、出力インターフェース、メトリック等を保持する。</p>
+          <p class="answer-text">ルーティングテーブル</p>
+          <p class="explanation-text">ルーティングでは、宛先IPアドレスを基にパケットの転送先を選ぶ。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - ルーティングテーブル読解</span>
+              <span>ネットワーク層 - ルーティングテーブル</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2155,7 +2158,7 @@
         <li>
           <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.17-18</span>
+          <span>PDF p.17</span>
         </li></ul>
             </div>
           </div>
@@ -2163,7 +2166,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q53" data-question-type="対応" data-search-text="送信方式を対応付けなさい。①特定の1台、②同一範囲の全端末、③特定グループ全員、④グループ内のいずれか1台。 ①ユニキャスト、②ブロードキャスト、③マルチキャスト、④エニーキャスト ネットワーク層 - キャスト方式">
+    <article class="question-card" data-question-id="q53" data-question-type="対応" data-search-text="送信方式を対応付けなさい。①特定の1台へ送信、②自分のネットワーク全体へ送信、③特定のグループへ送信、④特定のグループ内のいずれか1台へ送信。 ①ユニキャスト、②ブロードキャスト、③マルチキャスト、④エニーキャスト ネットワーク層 - キャスト方式">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 29">Q.29</span>
@@ -2174,7 +2177,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">送信方式を対応付けなさい。①特定の1台、②同一範囲の全端末、③特定グループ全員、④グループ内のいずれか1台。</p>
+      <p class="question-prompt">送信方式を対応付けなさい。①特定の1台へ送信、②自分のネットワーク全体へ送信、③特定のグループへ送信、④特定のグループ内のいずれか1台へ送信。</p>
       
       <details class="answer-details">
         <summary>
@@ -2184,7 +2187,7 @@
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
           <p class="answer-text">①ユニキャスト、②ブロードキャスト、③マルチキャスト、④エニーキャスト</p>
-          <p class="explanation-text">『誰に届けるか』で4方式を区別する。</p>
+          <p class="explanation-text">それぞれ、データを送る相手の範囲が異なる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -2204,7 +2207,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q49" data-question-type="四択" data-search-text="l2スイッチのオートネゴシエーションの説明として最も適切なものはどれか。 a. 双方が対応する速度・全二重/半二重などの共通リンク条件を自動決定する データリンク層 - オートネゴシエーション">
+    <article class="question-card" data-question-id="q49" data-question-type="四択" data-search-text="スイッチのオートネゴシエーションは、主にどの項目を自動的に調整する機能か。 a. 通信速度 データリンク層 - オートネゴシエーション">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 30">Q.30</span>
@@ -2215,8 +2218,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">L2スイッチのオートネゴシエーションの説明として最も適切なものはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. 双方が対応する速度・全二重/半二重などの共通リンク条件を自動決定する</li><li>B. IPアドレスをMACへ変換する</li><li>C. ストレートとクロスだけを判別する</li><li>D. ルーティングテーブルを作る</li></ol>
+      <p class="question-prompt">スイッチのオートネゴシエーションは、主にどの項目を自動的に調整する機能か。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. 通信速度</li><li>B. ケーブルの長さ</li><li>C. MACアドレスの番号</li><li>D. 接続するPCの台数</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -2224,8 +2227,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">A. 双方が対応する速度・全二重/半二重などの共通リンク条件を自動決定する</p>
-          <p class="explanation-text">ケーブルの送受信ペア自動判別はAuto MDI/MDI-Xであり、混同しない。</p>
+          <p class="answer-text">A. 通信速度</p>
+          <p class="explanation-text">相手機器と通信できる速度に自動的に合わせる機能である。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -2238,6 +2241,11 @@
           <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.22</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -2245,7 +2253,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q48" data-question-type="計算" data-search-text="q47と同じ構成でvlanなしの場合、ブロードキャストドメインはいくつか。 3個。r1のsw1側、r1とr2を含むsw2側、r2のブリッジ側に分かれる。 ネットワーク層 - 構成図のブロードキャストドメイン">
+    <article class="question-card" data-question-id="q48" data-question-type="計算" data-search-text="1台のルータの左側と右側に、それぞれスイッチとpcを接続した。左右のネットワークをつなぐ機器は、このルータだけである。ブロードキャストドメインは何個か。 2個。左側と右側で1個ずつに分かれる。 ネットワーク層 - ブロードキャストドメインの数">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 31">Q.31</span>
@@ -2256,7 +2264,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">Q47と同じ構成でVLANなしの場合、ブロードキャストドメインはいくつか。</p>
+      <p class="question-prompt">1台のルータの左側と右側に、それぞれスイッチとPCを接続した。左右のネットワークをつなぐ機器は、このルータだけである。ブロードキャストドメインは何個か。</p>
       
       <details class="answer-details">
         <summary>
@@ -2265,12 +2273,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">3個。R1のSW1側、R1とR2を含むSW2側、R2のブリッジ側に分かれる。</p>
-          <p class="explanation-text">ルータはL2ブロードキャストを越境させないが、ハブ・通常のL2スイッチ・ブリッジは同一ドメイン内で転送する。</p>
+          <p class="answer-text">2個。左側と右側で1個ずつに分かれる。</p>
+          <p class="explanation-text">ルータはブロードキャストを転送しないため、左右が別のブロードキャストドメインになる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - 構成図のブロードキャストドメイン</span>
+              <span>ネットワーク層 - ブロードキャストドメインの数</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2291,7 +2299,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q58" data-question-type="四択" data-search-text="dhcpサーバへ到達できないwindows端末に、169.254.x.xが設定された。このアドレスの分類はどれか。 a. リンクローカル ネットワーク層 - リンクローカルアドレス">
+    <article class="question-card" data-question-id="q58" data-question-type="四択" data-search-text="dhcpサーバにアクセスできないとき、仮に設定されるアドレスを資料では何と呼んでいるか。 a. リンクローカルアドレス ネットワーク層 - リンクローカルアドレス">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 32">Q.32</span>
@@ -2302,8 +2310,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">DHCPサーバへ到達できないWindows端末に、169.254.x.xが設定された。このアドレスの分類はどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. リンクローカル</li><li>B. ループバック</li><li>C. マルチキャスト</li><li>D. クラスE実験用</li></ol>
+      <p class="question-prompt">DHCPサーバにアクセスできないとき、仮に設定されるアドレスを資料では何と呼んでいるか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. リンクローカルアドレス</li><li>B. ループバックアドレス</li><li>C. ブロードキャストアドレス</li><li>D. MACアドレス</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -2311,8 +2319,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">A. リンクローカル</p>
-          <p class="explanation-text">同一リンク内の限定的な通信に使われ、通常はルータを越えない。教材はDHCPへアクセスできないときの仮アドレスとして説明する。</p>
+          <p class="answer-text">A. リンクローカルアドレス</p>
+          <p class="explanation-text">資料では、DHCPサーバを利用できないときの仮のアドレスとして説明している。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -2332,7 +2340,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q30" data-question-type="四択" data-search-text="公認カンペのethernet表に合う組合せはどれか。 b. 1000base-sx - mmf・条件により220-550 m 物理層 - ethernet規格と媒体">
+    <article class="question-card" data-question-id="q30" data-question-type="四択" data-search-text="公認カンペの表で、100base-txのケーブルと最大長の組合せはどれか。 a. ツイストペアケーブル・100m 物理層 - ethernetのケーブルと長さ">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 33">Q.33</span>
@@ -2343,8 +2351,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">公認カンペのEthernet表に合う組合せはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. 10GBASE-LR - MMF・100 m</li><li>B. 1000BASE-SX - MMF・条件により220-550 m</li><li>C. 10BASE2 - UTP・100 m</li><li>D. 100BASE-TX - 同軸・500 m</li></ol>
+      <p class="question-prompt">公認カンペの表で、100BASE-TXのケーブルと最大長の組合せはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. ツイストペアケーブル・100m</li><li>B. 同軸ケーブル・185m</li><li>C. 光ファイバーケーブル・1000m</li><li>D. 同軸ケーブル・500m</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -2352,12 +2360,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">B. 1000BASE-SX - MMF・条件により220-550 m</p>
-          <p class="explanation-text">公認カンペの表では10GBASE-LRはSMFで10 km、10BASE2は同軸で185 m、100BASE-TXはツイストペアで100 m。1000BASE-SXの220/550 mはMMFの種類など条件による値で、常に同一距離ではない。</p>
+          <p class="answer-text">A. ツイストペアケーブル・100m</p>
+          <p class="explanation-text">公認カンペの表では、100BASE-TXはツイストペアケーブルを使い、最大長は100mである。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - Ethernet規格と媒体</span>
+              <span>物理層 - Ethernetのケーブルと長さ</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2373,7 +2381,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q59" data-question-type="四択" data-search-text="次のうち、rfc 1918のプライベートipv4アドレスではないものはどれか。 d. 172.32.0.1 ネットワーク層 - プライベートipアドレス">
+    <article class="question-card" data-question-id="q59" data-question-type="四択" data-search-text="次のうち、資料にあるプライベートipアドレスの範囲に入らないものはどれか。 d. 172.32.0.1 ネットワーク層 - プライベートipアドレスの範囲">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 34">Q.34</span>
@@ -2384,7 +2392,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">次のうち、RFC 1918のプライベートIPv4アドレスではないものはどれか。</p>
+      <p class="question-prompt">次のうち、資料にあるプライベートIPアドレスの範囲に入らないものはどれか。</p>
       <ol class="choices" aria-label="選択肢"><li>A. 10.20.30.40</li><li>B. 172.31.255.1</li><li>C. 192.168.10.5</li><li>D. 172.32.0.1</li></ol>
       <details class="answer-details">
         <summary>
@@ -2394,11 +2402,11 @@
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
           <p class="answer-text">D. 172.32.0.1</p>
-          <p class="explanation-text">範囲は10.0.0.0/8、172.16.0.0/12（172.16-172.31）、192.168.0.0/16。</p>
+          <p class="explanation-text">172で始まる範囲は172.16.0.0-172.31.255.255なので、172.32.0.1は含まれない。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - プライベートIPアドレス</span>
+              <span>ネットワーク層 - プライベートIPアドレスの範囲</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2414,7 +2422,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q47" data-question-type="計算" data-search-text="次の構成のコリジョンドメイン数を求めなさい。r1-sw1、r1-sw2。sw1にはpc1台と、pc3台を収容するハブ。sw2-r2-ブリッジ-pc1台。 7個。r1-sw1、sw1-pc、sw1-ハブ配下全体、r1-sw2、sw2-r2、r2-ブリッジ、ブリッジ-pcの7区間。 データリンク層 - 構成図のコリジョンドメイン">
+    <article class="question-card" data-question-id="q47" data-question-type="計算" data-search-text="1台のスイッチにpcを3台、それぞれ別のポートへ1本ずつのケーブルで接続した。ほかの接続はない。この構成のコリジョンドメインは何個か。 3個。 データリンク層 - コリジョンドメインの数">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 35">Q.35</span>
@@ -2425,7 +2433,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">次の構成のコリジョンドメイン数を求めなさい。R1-SW1、R1-SW2。SW1にはPC1台と、PC3台を収容するハブ。SW2-R2-ブリッジ-PC1台。</p>
+      <p class="question-prompt">1台のスイッチにPCを3台、それぞれ別のポートへ1本ずつのケーブルで接続した。ほかの接続はない。この構成のコリジョンドメインは何個か。</p>
       
       <details class="answer-details">
         <summary>
@@ -2434,12 +2442,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">7個。R1-SW1、SW1-PC、SW1-ハブ配下全体、R1-SW2、SW2-R2、R2-ブリッジ、ブリッジ-PCの7区間。</p>
-          <p class="explanation-text">スイッチ・ルータ・ブリッジはポートごとに分割する。ハブ配下の複数線は増やさず1個として数える。</p>
+          <p class="answer-text">3個。</p>
+          <p class="explanation-text">スイッチはポートごとにコリジョンドメインを分けるため、PCにつながる3つのポートで3個となる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>データリンク層 - 構成図のコリジョンドメイン</span>
+              <span>データリンク層 - コリジョンドメインの数</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2447,7 +2455,7 @@
         <li>
           <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.20</span>
+          <span>PDF p.17、19-20</span>
         </li>
         <li>
           <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
@@ -2460,7 +2468,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q45" data-question-type="説明" data-search-text="スイッチの先にリピータハブを接続して複数pcをつないだ場合、pcごとにコリジョンドメインが分かれない理由を説明しなさい。 スイッチのポートは境界になるが、その先のハブは物理層で受信信号を全ポートへ繰り返すだけで、衝突を分離しない。したがってスイッチ-ハブ間とハブ配下の全pcはまとめて1つの共有コリジョンドメインになる。 データリンク層 - コリジョンドメイン">
+    <article class="question-card" data-question-id="q45" data-question-type="説明" data-search-text="コリジョンドメインの分け方について、ハブとブリッジの違いを説明しなさい。 ハブは、コリジョンドメインを分けない。ブリッジはコリジョンドメインを分割できるので、コリジョンを減らせる。 データリンク層 - コリジョンドメイン">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 36">Q.36</span>
@@ -2471,7 +2479,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">スイッチの先にリピータハブを接続して複数PCをつないだ場合、PCごとにコリジョンドメインが分かれない理由を説明しなさい。</p>
+      <p class="question-prompt">コリジョンドメインの分け方について、ハブとブリッジの違いを説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2480,8 +2488,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">スイッチのポートは境界になるが、その先のハブは物理層で受信信号を全ポートへ繰り返すだけで、衝突を分離しない。したがってスイッチ-ハブ間とハブ配下の全PCはまとめて1つの共有コリジョンドメインになる。</p>
-          <p class="explanation-text">線の本数ではなく、どの機器が衝突を遮断するかで数える。</p>
+          <p class="answer-text">ハブは、コリジョンドメインを分けない。ブリッジはコリジョンドメインを分割できるので、コリジョンを減らせる。</p>
+          <p class="explanation-text">コリジョンドメインは、コリジョンが発生したときに再送信が必要になる範囲である。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -2493,7 +2501,12 @@
         <li>
           <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.14、17、20</span>
+          <span>PDF p.14、17</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -2501,7 +2514,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q10" data-question-type="対応" data-search-text="osi参照モデルの各範囲を、4階層tcp/ipモデルへ対応付けなさい。①osi第7-5層、②第4層、③第3層、④第2-1層。 ①アプリケーション層、②トランスポート層、③インターネット層、④ネットワークアクセス層（ネットワークインターフェース層） osi参照モデルとtcp/ipモデルの対応">
+    <article class="question-card" data-question-id="q10" data-question-type="対応" data-search-text="osi参照モデルの①第7-5層、②第4層、③第3層、④第2-1層を、tcp/ipモデルの層に対応付けなさい。 ①アプリケーション層、②トランスポート層、③インターネット層、④ネットワークアクセス層 osi参照モデルとtcp/ipモデル">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 37">Q.37</span>
@@ -2512,7 +2525,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">OSI参照モデルの各範囲を、4階層TCP/IPモデルへ対応付けなさい。①OSI第7-5層、②第4層、③第3層、④第2-1層。</p>
+      <p class="question-prompt">OSI参照モデルの①第7-5層、②第4層、③第3層、④第2-1層を、TCP/IPモデルの層に対応付けなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2521,12 +2534,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">①アプリケーション層、②トランスポート層、③インターネット層、④ネットワークアクセス層（ネットワークインターフェース層）</p>
-          <p class="explanation-text">OSIの上位3層と下位2層がTCP/IPモデルではそれぞれまとめられている。</p>
+          <p class="answer-text">①アプリケーション層、②トランスポート層、③インターネット層、④ネットワークアクセス層</p>
+          <p class="explanation-text">OSIの上位3層と下位2層は、TCP/IPモデルではそれぞれ1つの層にまとめられている。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>OSI参照モデルとTCP/IPモデルの対応</span>
+              <span>OSI参照モデルとTCP/IPモデル</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2534,7 +2547,12 @@
         <li>
           <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.7-8</span>
+          <span>PDF p.7</span>
+        </li>
+        <li>
+          <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.3</span>
         </li>
         <li>
           <cite>NT21課題01欠席者レポート.pdf</cite>
@@ -2547,7 +2565,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q23" data-question-type="説明" data-search-text="旧来のバス型同軸ethernetでケーブル両端にターミネータが必要な理由を説明しなさい。 伝送路の端で信号が反射すると、元の信号へ重なって波形が乱れ、通信を判定できなくなる。ターミネータはケーブルの特性インピーダンスに合わせて信号エネルギーを吸収し、端点反射を抑える。 物理層 - 同軸ケーブルと終端抵抗">
+    <article class="question-card" data-question-id="q23" data-question-type="説明" data-search-text="光ファイバーを使う利点を1つ、費用面の注意点を1つ説明しなさい。 光信号を使うため、電磁波などのノイズに強い。注意点は、専用の機器が高価なことである。 物理層 - 光ファイバーの特徴">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 38">Q.38</span>
@@ -2558,7 +2576,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">旧来のバス型同軸Ethernetでケーブル両端にターミネータが必要な理由を説明しなさい。</p>
+      <p class="question-prompt">光ファイバーを使う利点を1つ、費用面の注意点を1つ説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2567,12 +2585,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">伝送路の端で信号が反射すると、元の信号へ重なって波形が乱れ、通信を判定できなくなる。ターミネータはケーブルの特性インピーダンスに合わせて信号エネルギーを吸収し、端点反射を抑える。</p>
-          <p class="explanation-text">資料は『取り付ける必要がある』までを示すため、反射防止の理由を標準的な知識で補完した。</p>
+          <p class="answer-text">光信号を使うため、電磁波などのノイズに強い。注意点は、専用の機器が高価なことである。</p>
+          <p class="explanation-text">光ファイバーは、光のパルス（点滅）を利用して通信する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - 同軸ケーブルと終端抵抗</span>
+              <span>物理層 - 光ファイバーの特徴</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2580,12 +2598,12 @@
         <li>
           <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.18</span>
+          <span>PDF p.15</span>
         </li>
         <li>
           <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.6</span>
+          <span>PDF p.5</span>
         </li></ul>
             </div>
           </div>
@@ -2593,7 +2611,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q21" data-question-type="穴埋め" data-search-text="光を導く光ファイバーの基本構造は、中心の（ a ）と、その周囲で屈折率を変えて光を閉じ込める（ b ）から成る。 a: コア、b: クラッド 物理層 - 光ファイバーの構造">
+    <article class="question-card" data-question-id="q21" data-question-type="穴埋め" data-search-text="光ファイバーの構造図で、中心の部分を（a）、その周りの部分を（b）という。 a: コア、b: クラッド 物理層 - 光ファイバーの構造">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 39">Q.39</span>
@@ -2604,7 +2622,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">光を導く光ファイバーの基本構造は、中心の（ A ）と、その周囲で屈折率を変えて光を閉じ込める（ B ）から成る。</p>
+      <p class="question-prompt">光ファイバーの構造図で、中心の部分を（A）、その周りの部分を（B）という。</p>
       
       <details class="answer-details">
         <summary>
@@ -2614,7 +2632,7 @@
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
           <p class="answer-text">A: コア、B: クラッド</p>
-          <p class="explanation-text">AとBは光学的な基本構造で、実際のケーブルには保護被覆や補強材なども加わる。材質には石英ガラスやプラスチックなどが使われる。</p>
+          <p class="explanation-text">材質には、石英ガラスやプラスチックなどが使われる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -2632,6 +2650,11 @@
           <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.6</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -2639,7 +2662,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q34" data-question-type="対応" data-search-text="次の接続形態を対応付けなさい。①1本の基線に端末、②円形に端末、③中央装置から放射状、④各機器を相互接続。 ①バス型、②リング型、③スター型、④メッシュ型 データリンク層 - ネットワークトポロジー">
+    <article class="question-card" data-question-id="q34" data-question-type="対応" data-search-text="次の接続形態の名前を答えなさい。①基線に各機器を接続する、②円形に各機器を接続する、③ハブやスイッチに各機器を接続する、④各機器を互いに接続する。 ①バス型、②リング型、③スター型、④メッシュ型。 データリンク層 - ネットワークトポロジー">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 40">Q.40</span>
@@ -2650,7 +2673,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">次の接続形態を対応付けなさい。①1本の基線に端末、②円形に端末、③中央装置から放射状、④各機器を相互接続。</p>
+      <p class="question-prompt">次の接続形態の名前を答えなさい。①基線に各機器を接続する、②円形に各機器を接続する、③ハブやスイッチに各機器を接続する、④各機器を互いに接続する。</p>
       
       <details class="answer-details">
         <summary>
@@ -2659,8 +2682,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">①バス型、②リング型、③スター型、④メッシュ型</p>
-          <p class="explanation-text">中心装置の有無、共有する基線、閉じた輪、複数の相互経路を手掛かりにする。</p>
+          <p class="answer-text">①バス型、②リング型、③スター型、④メッシュ型。</p>
+          <p class="explanation-text">基線・円形・中心のハブやスイッチ・相互接続という形の違いで区別する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -2680,7 +2703,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q04" data-question-type="説明" data-search-text="プロトコルが人間の『言葉』に例えられる理由と、プロトコルを階層化する利点を説明しなさい。 送受信側が同じ規約・形式・手順を共有しなければデータの意味を解釈できない点が、会話で共通言語が必要なことに似ている。役割ごとに階層化すれば、信号、隣接転送、経路、信頼性などを分担でき、各層の変更や障害の切り分けをしやすくなる。 導入 - プロトコルと階層化">
+    <article class="question-card" data-question-id="q04" data-question-type="説明" data-search-text="プロトコルとは何か。また、通信するコンピュータ同士が同じプロトコルを使う理由を説明しなさい。 プロトコルとは、通信を行うための手順やルールである。同じプロトコルを使うことで、互いにデータの意味を理解してやり取りできる。 導入 - プロトコル">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 41">Q.41</span>
@@ -2691,7 +2714,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">プロトコルが人間の『言葉』に例えられる理由と、プロトコルを階層化する利点を説明しなさい。</p>
+      <p class="question-prompt">プロトコルとは何か。また、通信するコンピュータ同士が同じプロトコルを使う理由を説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2700,12 +2723,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">送受信側が同じ規約・形式・手順を共有しなければデータの意味を解釈できない点が、会話で共通言語が必要なことに似ている。役割ごとに階層化すれば、信号、隣接転送、経路、信頼性などを分担でき、各層の変更や障害の切り分けをしやすくなる。</p>
-          <p class="explanation-text">プロトコルは単なる名称ではなく、相互運用のための通信手順である。</p>
+          <p class="answer-text">プロトコルとは、通信を行うための手順やルールである。同じプロトコルを使うことで、互いにデータの意味を理解してやり取りできる。</p>
+          <p class="explanation-text">資料では、同じ言葉を使うと会話ができることに例えている。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>導入 - プロトコルと階層化</span>
+              <span>導入 - プロトコル</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2713,10 +2736,15 @@
         <li>
           <cite>NT21 配布資料 01 ネットワークって何.pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.6-7</span>
+          <span>PDF p.6</span>
         </li>
         <li>
           <cite>NT21課題01欠席者レポート.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.1</span>
         </li></ul>
@@ -2726,7 +2754,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q11" data-question-type="並べ替え" data-search-text="tcp/ipをethernet上で使う典型例として、送信側で上位層から下位層へカプセル化される順に並べ替えなさい。ビット／フレーム／データ／パケット／セグメント データ → セグメント → パケット → フレーム → ビット pduとカプセル化">
+    <article class="question-card" data-question-id="q11" data-question-type="並べ替え" data-search-text="公認カンペにある「上位層から下位層へのカプセル化」の順に並べ替えなさい。ビット／フレーム／データ／パケット／セグメント データ → セグメント → パケット → フレーム → ビット osi参照モデル - カプセル化">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 42">Q.42</span>
@@ -2737,7 +2765,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">TCP/IPをEthernet上で使う典型例として、送信側で上位層から下位層へカプセル化される順に並べ替えなさい。ビット／フレーム／データ／パケット／セグメント</p>
+      <p class="question-prompt">公認カンペにある「上位層から下位層へのカプセル化」の順に並べ替えなさい。ビット／フレーム／データ／パケット／セグメント</p>
       
       <details class="answer-details">
         <summary>
@@ -2747,11 +2775,11 @@
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
           <p class="answer-text">データ → セグメント → パケット → フレーム → ビット</p>
-          <p class="explanation-text">アプリケーションデータへ各層の制御情報が順に付加され、最後に物理信号として送られる。PDU名は使うプロトコルや教材の流儀で異なるため、この問題は典型的なTCP/IP over Ethernetに限定している。</p>
+          <p class="explanation-text">公認カンペでは、データから始まり、最後がビットになる順で示されている。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>PDUとカプセル化</span>
+              <span>OSI参照モデル - カプセル化</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2767,7 +2795,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q38" data-question-type="説明" data-search-text="共有媒体の半二重ethernetで、csma/cdが送信開始から衝突後の再試行まで行う処理を順に説明しなさい。 まずcarrier senseで媒体が空いているか確認し、空いていればmultiple accessの各端末が送信できる。送信中も衝突を監視し、collision detectionで衝突を検出したら同じコリジョンドメインへジャム信号を流す。その後ランダムなバックオフ時間を待ち、媒体確認から再試行する。送信試行は最大16回で、16回目の衝突後は失敗として中止する。 データリンク層 - csma/cd">
+    <article class="question-card" data-question-id="q38" data-question-type="説明" data-search-text="csma/cdで、通信を始める前に確認することと、伝送路が空いていた場合の動作を説明しなさい。 通信を始める前に、伝送路が使用中かどうかを確認する。空いていれば、優先順位なしで各機器が送信できる。 データリンク層 - csma/cdの送信開始">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 43">Q.43</span>
@@ -2778,7 +2806,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">共有媒体の半二重Ethernetで、CSMA/CDが送信開始から衝突後の再試行まで行う処理を順に説明しなさい。</p>
+      <p class="question-prompt">CSMA/CDで、通信を始める前に確認することと、伝送路が空いていた場合の動作を説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2787,12 +2815,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">まずCarrier Senseで媒体が空いているか確認し、空いていればMultiple Accessの各端末が送信できる。送信中も衝突を監視し、Collision Detectionで衝突を検出したら同じコリジョンドメインへジャム信号を流す。その後ランダムなバックオフ時間を待ち、媒体確認から再試行する。送信試行は最大16回で、16回目の衝突後は失敗として中止する。</p>
-          <p class="explanation-text">CS・MA・CDの略語を個別暗記するだけでなく、一連の順序を言えるようにする。</p>
+          <p class="answer-text">通信を始める前に、伝送路が使用中かどうかを確認する。空いていれば、優先順位なしで各機器が送信できる。</p>
+          <p class="explanation-text">空きを確認する動作がCS、空いていれば各機器が送信できることがMAに当たる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>データリンク層 - CSMA/CD</span>
+              <span>データリンク層 - CSMA/CDの送信開始</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2800,7 +2828,7 @@
         <li>
           <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.8-12</span>
+          <span>PDF p.8-10</span>
         </li>
         <li>
           <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
@@ -2813,7 +2841,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q66" data-question-type="説明" data-search-text="同じ/26分割なのに、授業資料では『割り当て可能なサブネット数2』、現代のcidrでは『4』となり得る理由を説明しなさい。 授業資料は借りたサブネットビットが全0と全1の2サブネットを除く旧来の2^n-2規則を採用し、2ビットなら4-2=2とする。現代の標準的運用では全0・全1サブネットも利用できるため4個すべてを数える。試験で『資料の規則』と指定されたら2、一般的なcidrなら4と答える。 ネットワーク層 - 旧来のサブネット数規則">
+    <article class="question-card" data-question-id="q66" data-question-type="説明" data-search-text="サブネットマスクは何を分かるようにするものか。また、ネットワーク部とホスト部にはそれぞれ0と1のどちらを設定するか説明しなさい。 サブネットマスクは、ipアドレスのどこまでがネットワーク部かを分かるようにするもの。ネットワーク部には1、ホスト部には0を設定する。 ネットワーク層 - サブネットマスク">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 44">Q.44</span>
@@ -2824,7 +2852,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">同じ/26分割なのに、授業資料では『割り当て可能なサブネット数2』、現代のCIDRでは『4』となり得る理由を説明しなさい。</p>
+      <p class="question-prompt">サブネットマスクは何を分かるようにするものか。また、ネットワーク部とホスト部にはそれぞれ0と1のどちらを設定するか説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2833,12 +2861,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">授業資料は借りたサブネットビットが全0と全1の2サブネットを除く旧来の2^n-2規則を採用し、2ビットなら4-2=2とする。現代の標準的運用では全0・全1サブネットも利用できるため4個すべてを数える。試験で『資料の規則』と指定されたら2、一般的なCIDRなら4と答える。</p>
-          <p class="explanation-text">ホスト部が全0のネットワークアドレスと全1のブロードキャストアドレスを除く規則とは別問題である。/31などにはさらに例外がある。</p>
+          <p class="answer-text">サブネットマスクは、IPアドレスのどこまでがネットワーク部かを分かるようにするもの。ネットワーク部には1、ホスト部には0を設定する。</p>
+          <p class="explanation-text">サブネットマスクの1と0で、ネットワーク部とホスト部の区切りを表す。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - 旧来のサブネット数規則</span>
+              <span>ネットワーク層 - サブネットマスク</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2846,12 +2874,7 @@
         <li>
           <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.7</span>
-        </li>
-        <li>
-          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.2</span>
+          <span>PDF p.5</span>
         </li></ul>
             </div>
           </div>
@@ -2859,7 +2882,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q80" data-question-type="四択" data-search-text="コマンド・プロトコル・用語の対応として誤っているものはどれか。 d. dhcpリース - 永久に変更できない固定macアドレス 運用確認 - ipconfig / arp / https / dhcp">
+    <article class="question-card" data-question-id="q80" data-question-type="四択" data-search-text="自分のpcのipアドレスに加え、macアドレスやdhcpサーバの情報も表示したい。使うコマンドはどれか。 b. ipconfig /all 運用確認 - ipconfig">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 45">Q.45</span>
@@ -2870,8 +2893,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">コマンド・プロトコル・用語の対応として誤っているものはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. ipconfig /all - MACやDHCP情報も表示</li><li>B. arp -a - ARPキャッシュを確認</li><li>C. HTTPS - HTTPへTLS等の保護を組み合わせた通信</li><li>D. DHCPリース - 永久に変更できない固定MACアドレス</li></ol>
+      <p class="question-prompt">自分のPCのIPアドレスに加え、MACアドレスやDHCPサーバの情報も表示したい。使うコマンドはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. ipconfig</li><li>B. ipconfig /all</li><li>C. ping 宛先</li><li>D. tracert 宛先</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -2879,12 +2902,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">D. DHCPリース - 永久に変更できない固定MACアドレス</p>
-          <p class="explanation-text">DHCPリースは、DHCPサーバがクライアントへ特定IPアドレスの使用を許可する期間。取得日時・期限・サーバ情報などを確認できる。</p>
+          <p class="answer-text">B. ipconfig /all</p>
+          <p class="explanation-text">資料では、IPアドレスの確認にipconfig、MACアドレスやDHCPサーバも含めた確認にipconfig /allを使う。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>運用確認 - ipconfig / ARP / HTTPS / DHCP</span>
+              <span>運用確認 - ipconfig</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2900,7 +2923,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q54" data-question-type="説明" data-search-text="コネクション型とコネクションレス型を、通信前の準備・信頼性・速度の傾向で比較しなさい。 コネクション型は通信前に接続を確立し、順序や到達確認などを管理しやすいため信頼性を高めやすいが、制御の分だけ負荷や遅延が増える。コネクションレス型は事前確立なしで個々のデータを送り、軽量で速い反面、到達・順序・重複排除をそれ自体では保証しない。 ネットワーク層 - コネクション型 / レス型">
+    <article class="question-card" data-question-id="q54" data-question-type="説明" data-search-text="コネクション型とコネクションレス型では、通信を始める前の処理にどのような違いがあるか説明しなさい。 コネクション型は、通信の前に接続を確立する。コネクションレス型は、事前に接続を確立しない。 ネットワーク層 - コネクション型とコネクションレス型">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 46">Q.46</span>
@@ -2911,7 +2934,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">コネクション型とコネクションレス型を、通信前の準備・信頼性・速度の傾向で比較しなさい。</p>
+      <p class="question-prompt">コネクション型とコネクションレス型では、通信を始める前の処理にどのような違いがあるか説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2920,12 +2943,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">コネクション型は通信前に接続を確立し、順序や到達確認などを管理しやすいため信頼性を高めやすいが、制御の分だけ負荷や遅延が増える。コネクションレス型は事前確立なしで個々のデータを送り、軽量で速い反面、到達・順序・重複排除をそれ自体では保証しない。</p>
-          <p class="explanation-text">教材の比較を一般化した説明。特定の層だけに固定せず、採用プロトコルの性質として捉える。</p>
+          <p class="answer-text">コネクション型は、通信の前に接続を確立する。コネクションレス型は、事前に接続を確立しない。</p>
+          <p class="explanation-text">この問題では、通信前に接続を確立するかどうかを区別する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - コネクション型 / レス型</span>
+              <span>ネットワーク層 - コネクション型とコネクションレス型</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2941,7 +2964,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q64" data-question-type="計算" data-search-text="ipアドレス192.168.1.6、サブネットマスク255.255.255.192のネットワークアドレスをand演算またはブロック幅で求めなさい。 192.168.1.0/26 ネットワーク層 - and演算とネットワーク抽出">
+    <article class="question-card" data-question-id="q64" data-question-type="計算" data-search-text="この問題では資料の計算方法を使う。ipアドレスが192.168.1.6、サブネットマスクが255.255.255.0のとき、ネットワークアドレスを求めなさい。 192.168.1.0 ネットワーク層 - ネットワークアドレスの計算">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 47">Q.47</span>
@@ -2952,7 +2975,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">IPアドレス192.168.1.6、サブネットマスク255.255.255.192のネットワークアドレスをAND演算またはブロック幅で求めなさい。</p>
+      <p class="question-prompt">この問題では資料の計算方法を使う。IPアドレスが192.168.1.6、サブネットマスクが255.255.255.0のとき、ネットワークアドレスを求めなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -2961,12 +2984,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">192.168.1.0/26</p>
-          <p class="explanation-text">255.255.255.192は/26でブロック幅64。.6は0-63の範囲に属する。ブロードキャストは.63、利用可能ホストは.1-.62。</p>
+          <p class="answer-text">192.168.1.0</p>
+          <p class="explanation-text">IPアドレスとサブネットマスクをAND演算すると、最後の8ビットが0になる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - AND演算とネットワーク抽出</span>
+              <span>ネットワーク層 - ネットワークアドレスの計算</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -2982,18 +3005,18 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q25" data-question-type="対応" data-search-text="ベースバンド方式とブロードバンド方式を、①デジタル情報をパルスとして直接伝送、②アナログ信号へ変調・復調、③比較的長距離向き、④簡単な技術で高速化しやすい、へ対応付けなさい。 ベースバンド: ①・④。ブロードバンド: ②・③。 物理層 - 伝送方式">
+    <article class="question-card" data-question-id="q25" data-question-type="穴埋め" data-search-text="ethernetの規格名「100base-tx」のbaseは、（　　　）方式を表す。空欄に入る用語を答えなさい。 ベースバンド 物理層 - ethernetの伝送方式">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 48">Q.48</span>
-          <span class="type-badge">対応</span>
+          <span class="type-badge">穴埋め</span>
         </div>
         <label class="mastery-check">
           <input type="checkbox" data-mastery-checkbox aria-label="この問題を習得済みにする">
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">ベースバンド方式とブロードバンド方式を、①デジタル情報をパルスとして直接伝送、②アナログ信号へ変調・復調、③比較的長距離向き、④簡単な技術で高速化しやすい、へ対応付けなさい。</p>
+      <p class="question-prompt">Ethernetの規格名「100BASE-TX」のBASEは、（　　　）方式を表す。空欄に入る用語を答えなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -3002,12 +3025,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">ベースバンド: ①・④。ブロードバンド: ②・③。</p>
-          <p class="explanation-text">教材上、ベースバンドはノイズの影響を受けやすく長距離に不向き、ブロードバンドはモデムなどが必要だが複数周波数帯も利用できると整理される。</p>
+          <p class="answer-text">ベースバンド</p>
+          <p class="explanation-text">BASEは伝送方式を表し、ベースバンド方式を意味する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - 伝送方式</span>
+              <span>物理層 - Ethernetの伝送方式</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3015,12 +3038,17 @@
         <li>
           <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.19-20</span>
+          <span>PDF p.19</span>
         </li>
         <li>
           <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.7</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -3028,7 +3056,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q15" data-question-type="説明" data-search-text="ツイストペアケーブルが2本を1組としてより合わせる構造を持つ理由を、差動信号と外来ノイズの観点から説明しなさい。 対になる2本へ逆向きの電気的変化を与え、その差を受信側で読む。2本をより合わせると外来ノイズが両方へ似た形で加わりやすくなり、差を取ったときに共通成分を打ち消しやすい。これにより信号を安定して識別できる。 物理層 - ツイストペアと差動伝送">
+    <article class="question-card" data-question-id="q15" data-question-type="説明" data-search-text="ツイストペアケーブルの銅線は何本ずつより合わせているか。また、全体では何ペア・何本になるか説明しなさい。 銅線を2本ずつより合わせて1ペアにしている。4ペアで構成されるので、銅線は全部で8本になる。 物理層 - ツイストペアケーブルの構造">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 49">Q.49</span>
@@ -3039,7 +3067,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">ツイストペアケーブルが2本を1組としてより合わせる構造を持つ理由を、差動信号と外来ノイズの観点から説明しなさい。</p>
+      <p class="question-prompt">ツイストペアケーブルの銅線は何本ずつより合わせているか。また、全体では何ペア・何本になるか説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -3048,25 +3076,25 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">対になる2本へ逆向きの電気的変化を与え、その差を受信側で読む。2本をより合わせると外来ノイズが両方へ似た形で加わりやすくなり、差を取ったときに共通成分を打ち消しやすい。これにより信号を安定して識別できる。</p>
-          <p class="explanation-text">資料の『＋と－の電圧で0/1を送る』を、一般的な差動伝送の考え方で補完した。</p>
+          <p class="answer-text">銅線を2本ずつより合わせて1ペアにしている。4ペアで構成されるので、銅線は全部で8本になる。</p>
+          <p class="explanation-text">2本 × 4ペア = 8本である。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - ツイストペアと差動伝送</span>
+              <span>物理層 - ツイストペアケーブルの構造</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
               <ul>
         <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
+        </li>
+        <li>
           <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.10-11</span>
-        </li>
-        <li>
-          <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.4</span>
         </li></ul>
             </div>
           </div>
@@ -3074,7 +3102,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q41" data-question-type="説明" data-search-text="共有媒体でcsma/cdを使うネットワークは、端末数と通信量が増えると実効速度が急に落ちることがある。因果関係を説明しなさい。 同じ媒体へ同時送信を試みる確率が上がり、衝突が増える。衝突のたびにジャム信号、ランダム待機、再送が必要となり、実データを運ばない時間が増えるため、遅延が増し実効速度が低下する。 データリンク層 - csma/cdの負荷特性">
+    <article class="question-card" data-question-id="q41" data-question-type="説明" data-search-text="csma/cdを使うネットワークで、接続する機器が増えると通信が遅くなることがある。その理由を、衝突と再送という言葉を使って説明しなさい。 機器が増えると、ほぼ同時に送信して衝突することが多くなる。衝突による再送が多発するため、通信が遅くなる。 データリンク層 - csma/cdの注意点">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 50">Q.50</span>
@@ -3085,7 +3113,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">共有媒体でCSMA/CDを使うネットワークは、端末数と通信量が増えると実効速度が急に落ちることがある。因果関係を説明しなさい。</p>
+      <p class="question-prompt">CSMA/CDを使うネットワークで、接続する機器が増えると通信が遅くなることがある。その理由を、衝突と再送という言葉を使って説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -3094,12 +3122,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">同じ媒体へ同時送信を試みる確率が上がり、衝突が増える。衝突のたびにジャム信号、ランダム待機、再送が必要となり、実データを運ばない時間が増えるため、遅延が増し実効速度が低下する。</p>
-          <p class="explanation-text">接続台数そのものより、共有媒体上の競合と再送の増加が直接の原因である。</p>
+          <p class="answer-text">機器が増えると、ほぼ同時に送信して衝突することが多くなる。衝突による再送が多発するため、通信が遅くなる。</p>
+          <p class="explanation-text">資料では、機器が増えたときの問題を、衝突と再送の増加で説明している。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>データリンク層 - CSMA/CDの負荷特性</span>
+              <span>データリンク層 - CSMA/CDの注意点</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3107,7 +3135,7 @@
         <li>
           <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.8-14</span>
+          <span>PDF p.11-13</span>
         </li></ul>
             </div>
           </div>
@@ -3115,7 +3143,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q60" data-question-type="説明" data-search-text="プライベートipアドレスとグローバルipアドレスの違いを、重複・到達範囲・インターネット接続の観点から説明しなさい。 プライベートipは組織内部で自由に設計でき、別組織との間なら同じ値を再利用できるが、公共インターネット上では直接経路制御されない。グローバルipはインターネット上で一意になるよう管理され、外部との通信に使う。プライベート端末が外部へ出る際はnat/naptやproxyなどを介する。 ネットワーク層 - プライベート / グローバルip">
+    <article class="question-card" data-question-id="q60" data-question-type="説明" data-search-text="プライベートipアドレスとグローバルipアドレスの違いを、使う場所とアドレスの重複に触れて説明しなさい。 プライベートipアドレスは組織内で使い、別の組織であれば同じアドレスを使える。グローバルipアドレスはインターネット上で使い、世界中で重複しないように管理される。 ネットワーク層 - プライベートipとグローバルip">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 51">Q.51</span>
@@ -3126,7 +3154,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">プライベートIPアドレスとグローバルIPアドレスの違いを、重複・到達範囲・インターネット接続の観点から説明しなさい。</p>
+      <p class="question-prompt">プライベートIPアドレスとグローバルIPアドレスの違いを、使う場所とアドレスの重複に触れて説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -3135,12 +3163,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">プライベートIPは組織内部で自由に設計でき、別組織との間なら同じ値を再利用できるが、公共インターネット上では直接経路制御されない。グローバルIPはインターネット上で一意になるよう管理され、外部との通信に使う。プライベート端末が外部へ出る際はNAT/NAPTやProxyなどを介する。</p>
-          <p class="explanation-text">『プライベートIPではインターネットサービスを一切利用できない』のではなく、直接ルーティングできず変換・代理が必要と理解する。</p>
+          <p class="answer-text">プライベートIPアドレスは組織内で使い、別の組織であれば同じアドレスを使える。グローバルIPアドレスはインターネット上で使い、世界中で重複しないように管理される。</p>
+          <p class="explanation-text">「組織内とインターネット」「別組織との重複可と重複不可」を区別する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - プライベート / グローバルIP</span>
+              <span>ネットワーク層 - プライベートIPとグローバルIP</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3149,11 +3177,6 @@
           <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.2</span>
-        </li>
-        <li>
-          <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.2-3</span>
         </li></ul>
             </div>
           </div>
@@ -3161,7 +3184,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q44" data-question-type="説明" data-search-text="ブリッジがリピータハブより不要な通信と衝突を減らせる理由を、macアドレステーブルと転送判断に触れて説明しなさい。 ハブは信号を全ポートへ流すが、ブリッジはフレームの宛先macアドレスをmacアドレステーブルと照合し、必要な側へ選択的に転送する。またポートの両側を別のコリジョンドメインに分けるため、衝突の影響範囲も小さくできる。 データリンク層 - ブリッジ">
+    <article class="question-card" data-question-id="q44" data-question-type="説明" data-search-text="ブリッジは、フレーム内のどのアドレスを、メモリ内の何と比較して送信制御を行うか説明しなさい。 ブリッジは、フレーム内の宛先macアドレスを確認する。そのアドレスをmacアドレステーブルと比較して、送信制御を行う。 データリンク層 - ブリッジの送信制御">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 52">Q.52</span>
@@ -3172,7 +3195,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">ブリッジがリピータハブより不要な通信と衝突を減らせる理由を、MACアドレステーブルと転送判断に触れて説明しなさい。</p>
+      <p class="question-prompt">ブリッジは、フレーム内のどのアドレスを、メモリ内の何と比較して送信制御を行うか説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -3181,12 +3204,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">ハブは信号を全ポートへ流すが、ブリッジはフレームの宛先MACアドレスをMACアドレステーブルと照合し、必要な側へ選択的に転送する。またポートの両側を別のコリジョンドメインに分けるため、衝突の影響範囲も小さくできる。</p>
-          <p class="explanation-text">一般にテーブルは受信フレームの送信元MACと受信ポートの対応から学習する。</p>
+          <p class="answer-text">ブリッジは、フレーム内の宛先MACアドレスを確認する。そのアドレスをMACアドレステーブルと比較して、送信制御を行う。</p>
+          <p class="explanation-text">宛先MACアドレスをもとに、どちらへ送信するかを判断する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>データリンク層 - ブリッジ</span>
+              <span>データリンク層 - ブリッジの送信制御</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3207,7 +3230,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q61" data-question-type="説明" data-search-text="授業上のnatとnapt（ipマスカレード）の違いを、変換の対応関係とポート番号に触れて説明しなさい。 授業上、natはプライベートipとグローバルipを1対1で変換する。naptは複数のプライベート端末を1つのグローバルipへ対応させ、トランスポート層のポート番号で通信を識別する。一般用語ではnatが変換全般を指し、napt/patをその一形態とする場合もある。 ネットワーク層 - nat / napt">
+    <article class="question-card" data-question-id="q61" data-question-type="説明" data-search-text="資料でのnatとnaptの違いを説明しなさい。naptについては、通信を見分けるために使う番号にも触れること。 資料では、natはプライベートipアドレスとグローバルipアドレスを1対1で変換する。naptは複数のプライベートipアドレスを1つのグローバルipアドレスで扱い、ポート番号で通信を見分ける。 ネットワーク層 - natとnapt">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 53">Q.53</span>
@@ -3218,7 +3241,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">授業上のNATとNAPT（IPマスカレード）の違いを、変換の対応関係とポート番号に触れて説明しなさい。</p>
+      <p class="question-prompt">資料でのNATとNAPTの違いを説明しなさい。NAPTについては、通信を見分けるために使う番号にも触れること。</p>
       
       <details class="answer-details">
         <summary>
@@ -3227,12 +3250,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">授業上、NATはプライベートIPとグローバルIPを1対1で変換する。NAPTは複数のプライベート端末を1つのグローバルIPへ対応させ、トランスポート層のポート番号で通信を識別する。一般用語ではNATが変換全般を指し、NAPT/PATをその一形態とする場合もある。</p>
-          <p class="explanation-text">テストでは資料の1対1／1対多を先に答え、用語の広義・狭義を補足する。</p>
+          <p class="answer-text">資料では、NATはプライベートIPアドレスとグローバルIPアドレスを1対1で変換する。NAPTは複数のプライベートIPアドレスを1つのグローバルIPアドレスで扱い、ポート番号で通信を見分ける。</p>
+          <p class="explanation-text">NAPTはIPマスカレードとも呼ばれ、トランスポート層のポート番号を使う。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - NAT / NAPT</span>
+              <span>ネットワーク層 - NATとNAPT</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3253,7 +3276,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q77" data-question-type="説明" data-search-text="pingが疎通確認を行う仕組みと、結果から読み取れること・読み取れないことを説明しなさい。 pingはicmp echo requestを送り、相手のecho replyを受けて往復到達性を確認する。送受信数、損失率、往復時間の最小・最大・平均などを確認できる。ただし応答がない場合でも、相手停止だけでなくfwでicmpが遮断されている可能性があり、全アプリケーションの通信不可を直ちに意味しない。 運用確認 - ping / icmp">
+    <article class="question-card" data-question-id="q77" data-question-type="説明" data-search-text="pingコマンドは何を確認するために使うか。また、結果に表示されるパケットの情報を1つ挙げなさい。 指定した相手と通信できるかを確認するために使う。結果では、パケットの損失を確認できる。 運用確認 - ping">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 54">Q.54</span>
@@ -3264,7 +3287,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">pingが疎通確認を行う仕組みと、結果から読み取れること・読み取れないことを説明しなさい。</p>
+      <p class="question-prompt">pingコマンドは何を確認するために使うか。また、結果に表示されるパケットの情報を1つ挙げなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -3273,12 +3296,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">pingはICMP Echo Requestを送り、相手のEcho Replyを受けて往復到達性を確認する。送受信数、損失率、往復時間の最小・最大・平均などを確認できる。ただし応答がない場合でも、相手停止だけでなくFWでICMPが遮断されている可能性があり、全アプリケーションの通信不可を直ちに意味しない。</p>
-          <p class="explanation-text">疎通の一指標であり、原因を一意に断定する道具ではない。</p>
+          <p class="answer-text">指定した相手と通信できるかを確認するために使う。結果では、パケットの損失を確認できる。</p>
+          <p class="explanation-text">パケットの送信数、受信数を挙げてもよい。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>運用確認 - ping / ICMP</span>
+              <span>運用確認 - ping</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3294,7 +3317,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q46" data-question-type="四択" data-search-text="l2スイッチが『マルチポートブリッジ』と呼ばれる主な理由はどれか。 a. 多数のポートでmacアドレスに基づくブリッジ動作を行う データリンク層 - l2スイッチ">
+    <article class="question-card" data-question-id="q46" data-question-type="四択" data-search-text="l2スイッチは「マルチポート（　　　）」とも呼ばれる。空欄に入る機器名はどれか。 a. ブリッジ データリンク層 - l2スイッチ">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 55">Q.55</span>
@@ -3305,8 +3328,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">L2スイッチが『マルチポートブリッジ』と呼ばれる主な理由はどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. 多数のポートでMACアドレスに基づくブリッジ動作を行う</li><li>B. IPアドレスを自動配布する</li><li>C. 光を電波へ変換する</li><li>D. URLを暗号化する</li></ol>
+      <p class="question-prompt">L2スイッチは「マルチポート（　　　）」とも呼ばれる。空欄に入る機器名はどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. ブリッジ</li><li>B. ハブ</li><li>C. ルータ</li><li>D. リピータ</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -3314,8 +3337,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">A. 多数のポートでMACアドレスに基づくブリッジ動作を行う</p>
-          <p class="explanation-text">現在のLANでPC、サーバ、プリンタなどを収容し、ポートごとにフレームを選択転送する。</p>
+          <p class="answer-text">A. ブリッジ</p>
+          <p class="explanation-text">L2スイッチはマルチポートブリッジとも呼ばれ、動作はブリッジと同じである。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -3335,7 +3358,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q55" data-question-type="穴埋め" data-search-text="ipv4アドレスは（ a ）ビットで、通常（ b ）ビットずつ4つの10進数に分けて表す。ネットワーク部は所属ネットワーク、ホスト部は（ c ）を表す。 a: 32、b: 8、c: そのネットワーク内の機器番号 ネットワーク層 - ipv4アドレス">
+    <article class="question-card" data-question-id="q55" data-question-type="穴埋め" data-search-text="ipv4アドレスは（a）ビットで、（b）ビットごとに4つに分けて10進数で表す。ネットワーク部は所属するネットワークを表し、ホスト部は（c）を表す。 a: 32、b: 8、c: そのネットワーク内の何番の機器か ネットワーク層 - ipv4アドレスの構成">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 56">Q.56</span>
@@ -3346,7 +3369,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">IPv4アドレスは（ A ）ビットで、通常（ B ）ビットずつ4つの10進数に分けて表す。ネットワーク部は所属ネットワーク、ホスト部は（ C ）を表す。</p>
+      <p class="question-prompt">IPv4アドレスは（A）ビットで、（B）ビットごとに4つに分けて10進数で表す。ネットワーク部は所属するネットワークを表し、ホスト部は（C）を表す。</p>
       
       <details class="answer-details">
         <summary>
@@ -3355,12 +3378,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">A: 32、B: 8、C: そのネットワーク内の機器番号</p>
-          <p class="explanation-text">ネットワーク部とホスト部の境界はサブネットマスク／プレフィックス長で決まる。</p>
+          <p class="answer-text">A: 32、B: 8、C: そのネットワーク内の何番の機器か</p>
+          <p class="explanation-text">32ビットを8ビットずつに分けるため、4つの数で表す。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - IPv4アドレス</span>
+              <span>ネットワーク層 - IPv4アドレスの構成</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3369,11 +3392,6 @@
           <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.2</span>
-        </li>
-        <li>
-          <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.5-6</span>
         </li></ul>
             </div>
           </div>
@@ -3381,7 +3399,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q08" data-question-type="穴埋め" data-search-text="osi参照モデルで、ipアドレスと最適な経路の決定を扱うのは第（ a ）層の（ b ）層である。 a: 3、b: ネットワーク osi参照モデル - 第3層">
+    <article class="question-card" data-question-id="q08" data-question-type="穴埋め" data-search-text="osi参照モデルで、ipアドレスや経路選択を扱うのは第（a）層の（b）層である。 a: 3、b: ネットワーク osi参照モデル - ネットワーク層">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 57">Q.57</span>
@@ -3392,7 +3410,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">OSI参照モデルで、IPアドレスと最適な経路の決定を扱うのは第（ A ）層の（ B ）層である。</p>
+      <p class="question-prompt">OSI参照モデルで、IPアドレスや経路選択を扱うのは第（A）層の（B）層である。</p>
       
       <details class="answer-details">
         <summary>
@@ -3402,11 +3420,11 @@
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
           <p class="answer-text">A: 3、B: ネットワーク</p>
-          <p class="explanation-text">ルータやL3スイッチが対応する層で、宛先IPに基づくルーティングを扱う。</p>
+          <p class="explanation-text">ネットワーク層は、アドレスと最良の経路を決める役割を持つ。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>OSI参照モデル - 第3層</span>
+              <span>OSI参照モデル - ネットワーク層</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3414,7 +3432,7 @@
         <li>
           <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.3、8</span>
+          <span>PDF p.3</span>
         </li>
         <li>
           <cite>NT21課題01欠席者レポート.pdf</cite>
@@ -3427,7 +3445,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q50" data-question-type="穴埋め" data-search-text="ストレートケーブルとクロスケーブルを自動判別して接続できるl2スイッチの機能を（　　　）という。 auto mdi/mdi-x データリンク層 - auto mdi/mdi-x">
+    <article class="question-card" data-question-id="q50" data-question-type="穴埋め" data-search-text="ストレートケーブルとクロスケーブルを自動判別できるスイッチの機能を（　　　）という。 auto mdi/mdi-x。 データリンク層 - auto mdi/mdi-x">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 58">Q.58</span>
@@ -3438,7 +3456,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">ストレートケーブルとクロスケーブルを自動判別して接続できるL2スイッチの機能を（　　　）という。</p>
+      <p class="question-prompt">ストレートケーブルとクロスケーブルを自動判別できるスイッチの機能を（　　　）という。</p>
       
       <details class="answer-details">
         <summary>
@@ -3447,8 +3465,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">Auto MDI/MDI-X</p>
-          <p class="explanation-text">この機能により、対応機器では旧来のケーブル使い分けを意識しなくてよい。</p>
+          <p class="answer-text">Auto MDI/MDI-X。</p>
+          <p class="explanation-text">ストレートケーブルとクロスケーブルの違いを自動で判別する機能である。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -3473,7 +3491,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q40" data-question-type="穴埋め" data-search-text="csma/cdで衝突を検知した端末は（ a ）を同じコリジョンドメイン内へ送信し、各端末は（ b ）待ってから再試行する。 a: ジャム信号、b: ランダムな時間 データリンク層 - バックオフ">
+    <article class="question-card" data-question-id="q40" data-question-type="穴埋め" data-search-text="csma/cdで衝突を検知したときに送信する信号は（ a ）であり、再送の前には（ b ）待つ。 a: ジャム信号、b: ランダムな時間。 データリンク層 - バックオフ">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 59">Q.59</span>
@@ -3484,7 +3502,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">CSMA/CDで衝突を検知した端末は（ A ）を同じコリジョンドメイン内へ送信し、各端末は（ B ）待ってから再試行する。</p>
+      <p class="question-prompt">CSMA/CDで衝突を検知したときに送信する信号は（ A ）であり、再送の前には（ B ）待つ。</p>
       
       <details class="answer-details">
         <summary>
@@ -3493,8 +3511,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">A: ジャム信号、B: ランダムな時間</p>
-          <p class="explanation-text">再送時刻をずらし、同じ組合せが直ちに再衝突する可能性を下げる。</p>
+          <p class="answer-text">A: ジャム信号、B: ランダムな時間。</p>
+          <p class="explanation-text">すぐに再送せず待つのは、再び同時に送信しにくくするためである。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -3506,7 +3524,7 @@
         <li>
           <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.11-12</span>
+          <span>PDF p.12</span>
         </li>
         <li>
           <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
@@ -3519,7 +3537,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q24" data-question-type="四択" data-search-text="ethernet規格名『100base-tx』の読み取りとして最も適切なものはどれか。 b. 100 mbps級・ベースバンド・ツイストペア系 物理層 - ethernet規格名">
+    <article class="question-card" data-question-id="q24" data-question-type="四択" data-search-text="ethernetの規格名「100base-tx」の先頭の100は、何を表しているか。 a. 伝送速度が100mbpsであること 物理層 - ethernetの規格名">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 60">Q.60</span>
@@ -3530,8 +3548,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">Ethernet規格名『100BASE-TX』の読み取りとして最も適切なものはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. 100 bps・ブロードバンド・同軸</li><li>B. 100 Mbps級・ベースバンド・ツイストペア系</li><li>C. 100 Gbps・無線</li><li>D. 最大距離100 km・光</li></ol>
+      <p class="question-prompt">Ethernetの規格名「100BASE-TX」の先頭の100は、何を表しているか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. 伝送速度が100Mbpsであること</li><li>B. PCを100台接続すること</li><li>C. ケーブルを100本使うこと</li><li>D. ケーブルの最大長が100kmであること</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -3539,21 +3557,16 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">B. 100 Mbps級・ベースバンド・ツイストペア系</p>
-          <p class="explanation-text">先頭は速度、BASEはベースバンド方式、TXは媒体・方式の識別を表す。末尾の数字が常に距離を表すわけではない。</p>
+          <p class="answer-text">A. 伝送速度が100Mbpsであること</p>
+          <p class="explanation-text">公認カンペでは、規格名の先頭の数字を伝送速度として説明している。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - Ethernet規格名</span>
+              <span>物理層 - Ethernetの規格名</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
               <ul>
-        <li>
-          <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.19-20</span>
-        </li>
         <li>
           <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
           <span aria-hidden="true">·</span>
@@ -3565,19 +3578,19 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q69" data-question-type="計算" data-search-text="210.66.3.0/24を、各50台を収容する2つの『授業上利用可能な』サブネットに分ける。2^n-2規則に従い、マスクと2サブネットのネットワーク・ホスト範囲・ブロードキャストを答えなさい。 /26（255.255.255.192）。①nw 210.66.3.64、host .65-.126、broadcast .127。②nw 210.66.3.128、host .129-.190、broadcast .191。 ネットワーク層 - サブネット設計">
+    <article class="question-card" data-question-id="q69" data-question-type="四択" data-search-text="この問題では資料の計算方法を使う。1つのネットワークに50台のホストを接続したい。ホスト部のビット数として、必要な数を満たす最も少ないものはどれか。 c. 6ビット ネットワーク層 - 必要なホスト数">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 61">Q.61</span>
-          <span class="type-badge">計算</span>
+          <span class="type-badge">四択</span>
         </div>
         <label class="mastery-check">
           <input type="checkbox" data-mastery-checkbox aria-label="この問題を習得済みにする">
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">210.66.3.0/24を、各50台を収容する2つの『授業上利用可能な』サブネットに分ける。2^n-2規則に従い、マスクと2サブネットのネットワーク・ホスト範囲・ブロードキャストを答えなさい。</p>
-      
+      <p class="question-prompt">この問題では資料の計算方法を使う。1つのネットワークに50台のホストを接続したい。ホスト部のビット数として、必要な数を満たす最も少ないものはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. 4ビット</li><li>B. 5ビット</li><li>C. 6ビット</li><li>D. 7ビット</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -3585,12 +3598,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">/26（255.255.255.192）。①NW 210.66.3.64、host .65-.126、broadcast .127。②NW 210.66.3.128、host .129-.190、broadcast .191。</p>
-          <p class="explanation-text">50台には6ホストビット（62台）が必要。4つの/26から旧来規則で両端の.0/26と.192/26を除き、中間2つを使う。現代のCIDRでは両端も通常利用可能。</p>
+          <p class="answer-text">C. 6ビット</p>
+          <p class="explanation-text">5ビットでは2^5-2=30台で足りない。6ビットなら2^6-2=62台なので50台を接続できる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - サブネット設計</span>
+              <span>ネットワーク層 - 必要なホスト数</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3599,6 +3612,11 @@
           <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.10</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.2</span>
         </li></ul>
             </div>
           </div>
@@ -3606,7 +3624,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q22" data-question-type="対応" data-search-text="10base5と10base2を、それぞれ『ケーブルの通称』と『1セグメントの最大長』へ対応付けなさい。 10base5: thick／イエローケーブル、500 m。10base2: thin／細芯同軸ケーブル、185 m。 物理層 - 同軸ethernet">
+    <article class="question-card" data-question-id="q22" data-question-type="対応" data-search-text="10base5と10base2を、それぞれケーブルの呼び名と1セグメントの最大長に対応付けなさい。 10base5: thickケーブル（イエローケーブル）、500m。10base2: thinケーブル（細芯同軸ケーブル）、185m。 物理層 - 同軸ケーブル">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 62">Q.62</span>
@@ -3617,7 +3635,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">10BASE5と10BASE2を、それぞれ『ケーブルの通称』と『1セグメントの最大長』へ対応付けなさい。</p>
+      <p class="question-prompt">10BASE5と10BASE2を、それぞれケーブルの呼び名と1セグメントの最大長に対応付けなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -3626,12 +3644,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">10BASE5: Thick／イエローケーブル、500 m。10BASE2: thin／細芯同軸ケーブル、185 m。</p>
+          <p class="answer-text">10BASE5: Thickケーブル（イエローケーブル）、500m。10BASE2: thinケーブル（細芯同軸ケーブル）、185m。</p>
           <p class="explanation-text">どちらも同軸ケーブルで、両端に終端抵抗（ターミネータ）が必要である。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - 同軸Ethernet</span>
+              <span>物理層 - 同軸ケーブル</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3639,7 +3657,7 @@
         <li>
           <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.17-18</span>
+          <span>PDF p.18</span>
         </li>
         <li>
           <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
@@ -3652,18 +3670,18 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q31" data-question-type="対応" data-search-text="lanケーブル図の色列を左から1番-8番と読むものとする。t568b側とt568a側の1番・2番・3番・6番ピンの色を答えなさい。 t568b: 1白橙、2橙、3白緑、6緑。t568a: 1白緑、2緑、3白橙、6橙。 lanケーブル - t568a / t568b">
+    <article class="question-card" data-question-id="q31" data-question-type="穴埋め" data-search-text="lanケーブル作成資料のストレートケーブルの図で、左から「白橙、（a）、白緑、青、白青、（b）、白茶、茶」と並んでいる。aとbの色を答えなさい。 a: 橙、b: 緑 lanケーブル作成 - 配線の色">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 63">Q.63</span>
-          <span class="type-badge">対応</span>
+          <span class="type-badge">穴埋め</span>
         </div>
         <label class="mastery-check">
           <input type="checkbox" data-mastery-checkbox aria-label="この問題を習得済みにする">
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">LANケーブル図の色列を左から1番-8番と読むものとする。T568B側とT568A側の1番・2番・3番・6番ピンの色を答えなさい。</p>
+      <p class="question-prompt">LANケーブル作成資料のストレートケーブルの図で、左から「白橙、（A）、白緑、青、白青、（B）、白茶、茶」と並んでいる。AとBの色を答えなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -3672,12 +3690,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">T568B: 1白橙、2橙、3白緑、6緑。T568A: 1白緑、2緑、3白橙、6橙。</p>
-          <p class="explanation-text">両端が同じならストレート、片端B・片端Aならクロスになる。4・5番の青対と7・8番の茶対は図では同じ配置である。</p>
+          <p class="answer-text">A: 橙、B: 緑</p>
+          <p class="explanation-text">ストレートケーブルでは、両端を同じ色の順番に配線する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>LANケーブル - T568A / T568B</span>
+              <span>LANケーブル作成 - 配線の色</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3693,7 +3711,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q27" data-question-type="穴埋め" data-search-text="リピータは弱くなった（ a ）を再生・増幅し、lanの（ b ）を延ばす物理層機器である。 a: 電気信号、b: 接続距離 物理層 - リピータ">
+    <article class="question-card" data-question-id="q27" data-question-type="穴埋め" data-search-text="リピータは（a）を増幅し、lanの（b）を伸ばす物理層の機器である。 a: 電気信号、b: 接続距離 物理層 - リピータ">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 64">Q.64</span>
@@ -3704,7 +3722,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">リピータは弱くなった（ A ）を再生・増幅し、LANの（ B ）を延ばす物理層機器である。</p>
+      <p class="question-prompt">リピータは（A）を増幅し、LANの（B）を伸ばす物理層の機器である。</p>
       
       <details class="answer-details">
         <summary>
@@ -3714,7 +3732,7 @@
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
           <p class="answer-text">A: 電気信号、B: 接続距離</p>
-          <p class="explanation-text">宛先MACやIPを見て転送を選別する機器ではない。</p>
+          <p class="explanation-text">電気信号を増幅して、より長い距離を接続できるようにする。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -3739,7 +3757,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q18" data-question-type="四択" data-search-text="auto mdi/mdi-xを考えない旧来の接続で、pcとリピータハブの通常ポートを接続するケーブルはどれか。 a. ストレート 物理層 - ケーブルの使い分け">
+    <article class="question-card" data-question-id="q18" data-question-type="四択" data-search-text="資料の接続図で、pcとhubをつなぐために使うケーブルはどれか。 a. ストレートケーブル 物理層 - pcとhubの接続">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 65">Q.65</span>
@@ -3750,8 +3768,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">Auto MDI/MDI-Xを考えない旧来の接続で、PCとリピータハブの通常ポートを接続するケーブルはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. ストレート</li><li>B. クロス</li><li>C. 同軸</li><li>D. ロールオーバー</li></ol>
+      <p class="question-prompt">資料の接続図で、PCとHUBをつなぐために使うケーブルはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. ストレートケーブル</li><li>B. クロスケーブル</li><li>C. 同軸ケーブル</li><li>D. 光ファイバーケーブル</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -3759,12 +3777,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">A. ストレート</p>
-          <p class="explanation-text">教材の分類では『束ねるもの』と『束ねられるもの』の接続にストレートを使う。</p>
+          <p class="answer-text">A. ストレートケーブル</p>
+          <p class="explanation-text">資料では、PCなどの端末とHUBの接続にストレートケーブルを使っている。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - ケーブルの使い分け</span>
+              <span>物理層 - PCとHUBの接続</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3778,6 +3796,11 @@
           <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.5、8</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -3785,7 +3808,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q39" data-question-type="四択" data-search-text="端末が送信前に伝送路の使用状況を確認し、空いていれば優先順位なしで送信する。この組合せに対応するのはどれか。 a. csとma データリンク層 - csma/cdの略語">
+    <article class="question-card" data-question-id="q39" data-question-type="四択" data-search-text="csma/cdのcdに当たる動作はどれか。 b. 衝突を検出する データリンク層 - csma/cdの衝突検出">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 66">Q.66</span>
@@ -3796,8 +3819,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">端末が送信前に伝送路の使用状況を確認し、空いていれば優先順位なしで送信する。この組合せに対応するのはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. CSとMA</li><li>B. MAとCD</li><li>C. CDとARP</li><li>D. STPとVLAN</li></ol>
+      <p class="question-prompt">CSMA/CDのCDに当たる動作はどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. 伝送路が空いているか確認する</li><li>B. 衝突を検出する</li><li>C. ランダムな時間を待つ</li><li>D. トークンを受け取る</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -3805,12 +3828,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">A. CSとMA</p>
-          <p class="explanation-text">CSはCarrier Sense、MAはMultiple Access。CDは衝突の検出である。</p>
+          <p class="answer-text">B. 衝突を検出する</p>
+          <p class="explanation-text">CDはコリジョンディテクションで、コリジョンは衝突を意味する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>データリンク層 - CSMA/CDの略語</span>
+              <span>データリンク層 - CSMA/CDの衝突検出</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3818,7 +3841,7 @@
         <li>
           <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.8-10</span>
+          <span>PDF p.8、11</span>
         </li></ul>
             </div>
           </div>
@@ -3826,7 +3849,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q28" data-question-type="説明" data-search-text="リピータハブが『マルチポートリピータ』と呼ばれる理由と、通信量・機密性の面で生じる問題を説明しなさい。 ハブは受信した物理信号を再生し、複数の他ポートへそのまま流すため、1台で複数端末を接続するリピータとして働く。一方、宛先を判断せず不要なポートにも信号を送るので帯域を共有し衝突が増えやすく、他端末の通信が届くことで盗聴リスクも高まる。 物理層 - リピータハブ">
+    <article class="question-card" data-question-id="q28" data-question-type="説明" data-search-text="hubの問題点を、電気信号が流れる範囲に注目して1つ説明しなさい。 hubは、必要な相手以外にも電気信号を流す。そのため、ネットワークに負担がかかる。 物理層 - hubの問題点">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 67">Q.67</span>
@@ -3837,7 +3860,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">リピータハブが『マルチポートリピータ』と呼ばれる理由と、通信量・機密性の面で生じる問題を説明しなさい。</p>
+      <p class="question-prompt">HUBの問題点を、電気信号が流れる範囲に注目して1つ説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -3846,12 +3869,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">ハブは受信した物理信号を再生し、複数の他ポートへそのまま流すため、1台で複数端末を接続するリピータとして働く。一方、宛先を判断せず不要なポートにも信号を送るので帯域を共有し衝突が増えやすく、他端末の通信が届くことで盗聴リスクも高まる。</p>
-          <p class="explanation-text">『複数接続できる』だけでなく、選択転送をしないことが欠点の原因である。</p>
+          <p class="answer-text">HUBは、必要な相手以外にも電気信号を流す。そのため、ネットワークに負担がかかる。</p>
+          <p class="explanation-text">必要な相手だけに限って信号を送るわけではないことが、問題の原因である。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - リピータハブ</span>
+              <span>物理層 - HUBの問題点</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3859,12 +3882,17 @@
         <li>
           <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.21-24</span>
+          <span>PDF p.21、24</span>
         </li>
         <li>
           <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.7-8</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -3872,7 +3900,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q32" data-question-type="四択" data-search-text="rj-45とrj-11の説明として資料に合うものはどれか。 b. rj-45はlanケーブル接続に使われ、電話用rj-11より一回り大きい 物理層 - コネクタ">
+    <article class="question-card" data-question-id="q32" data-question-type="四択" data-search-text="rj-45とrj-11について、資料の説明に合うものはどれか。 b. rj-45はlanケーブルに使われ、電話用のrj-11より一回り大きい 物理層 - rj-45コネクタ">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 68">Q.68</span>
@@ -3883,8 +3911,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">RJ-45とRJ-11の説明として資料に合うものはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. RJ-11はLAN用でRJ-45より大きい</li><li>B. RJ-45はLANケーブル接続に使われ、電話用RJ-11より一回り大きい</li><li>C. 両者は光コネクタ</li><li>D. RJ-45は同軸ケーブル専用</li></ol>
+      <p class="question-prompt">RJ-45とRJ-11について、資料の説明に合うものはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. RJ-11はLANケーブル用で、RJ-45より大きい</li><li>B. RJ-45はLANケーブルに使われ、電話用のRJ-11より一回り大きい</li><li>C. RJ-45は光ファイバーにだけ使われる</li><li>D. RJ-45は同軸ケーブルにだけ使われる</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -3892,12 +3920,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">B. RJ-45はLANケーブル接続に使われ、電話用RJ-11より一回り大きい</p>
-          <p class="explanation-text">教材上の外形比較。一般的なEthernet用モジュラープラグとしてRJ-45という呼称が広く使われる。</p>
+          <p class="answer-text">B. RJ-45はLANケーブルに使われ、電話用のRJ-11より一回り大きい</p>
+          <p class="explanation-text">LANケーブルにRJ-45コネクタを付けると、パソコンやネットワーク機器に接続できる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - コネクタ</span>
+              <span>物理層 - RJ-45コネクタ</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3908,9 +3936,9 @@
           <span>PDF p.12</span>
         </li>
         <li>
-          <cite>NT21 配布資料 01 ネットワークって何.pdf</cite>
+          <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.1</span>
+          <span>PDF p.4</span>
         </li></ul>
             </div>
           </div>
@@ -3918,7 +3946,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q73" data-question-type="説明" data-search-text="ブロードキャストドメインとは何か。ルータ、ハブ、ブリッジ、通常のl2スイッチ、vlanが境界へ与える影響を説明しなさい。 ブロードキャストドメインは1回のl2ブロードキャストが届く範囲である。ルータは通常これを別ネットワークへ転送しないため境界になる。ハブ・ブリッジ・vlan未設定のl2スイッチは同一l2範囲でブロードキャストを転送するため、それだけでは分割しない。vlanを設定するとvlanごとに別ドメインとなる。 ネットワーク層 - ブロードキャストドメイン">
+    <article class="question-card" data-question-id="q73" data-question-type="説明" data-search-text="ブロードキャストドメインとは何か。また、ルータを通した場合、この範囲はどうなるか説明しなさい。 ブロードキャストドメインは、ブロードキャスト通信が流れる範囲である。ルータはブロードキャストを別のネットワークへ転送しないため、この範囲を分割する。 ネットワーク層 - ブロードキャストドメイン">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 69">Q.69</span>
@@ -3929,7 +3957,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">ブロードキャストドメインとは何か。ルータ、ハブ、ブリッジ、通常のL2スイッチ、VLANが境界へ与える影響を説明しなさい。</p>
+      <p class="question-prompt">ブロードキャストドメインとは何か。また、ルータを通した場合、この範囲はどうなるか説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -3938,8 +3966,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">ブロードキャストドメインは1回のL2ブロードキャストが届く範囲である。ルータは通常これを別ネットワークへ転送しないため境界になる。ハブ・ブリッジ・VLAN未設定のL2スイッチは同一L2範囲でブロードキャストを転送するため、それだけでは分割しない。VLANを設定するとVLANごとに別ドメインとなる。</p>
-          <p class="explanation-text">コリジョンドメインとは数え方が異なる。スイッチは衝突をポートごとに分けても、ブロードキャストは同一VLAN内へ広げる。</p>
+          <p class="answer-text">ブロードキャストドメインは、ブロードキャスト通信が流れる範囲である。ルータはブロードキャストを別のネットワークへ転送しないため、この範囲を分割する。</p>
+          <p class="explanation-text">ブロードキャストがどこまで流れるかに注目する。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -3952,11 +3980,6 @@
           <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.15</span>
-        </li>
-        <li>
-          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.2</span>
         </li></ul>
             </div>
           </div>
@@ -3964,7 +3987,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q63" data-question-type="説明" data-search-text="授業資料における『サブネット』と『クラスレス（cidr）』の違いを説明し、/24の意味も答えなさい。 資料では、サブネットはクラスで決まるホスト部の一部を借りてネットワークを細分化する考え方、cidrはクラスa/b/cの境界に縛られずプレフィックス長でネットワーク部を決める考え方である。/24は先頭24ビットがネットワーク部で、255.255.255.0に相当する。 ネットワーク層 - サブネット / cidr">
+    <article class="question-card" data-question-id="q63" data-question-type="説明" data-search-text="サブネットではipアドレスのどの部分をネットワーク部として使うか。また、分けたネットワークの数と1つのネットワークのホスト数はどう変化するか説明しなさい。 ホスト部の一部を、新しいネットワーク部として使う。ネットワークの数は増えるが、ホスト部が少なくなるため、1つのネットワークに入るホスト数は減る。 ネットワーク層 - サブネットの仕組み">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 70">Q.70</span>
@@ -3975,7 +3998,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">授業資料における『サブネット』と『クラスレス（CIDR）』の違いを説明し、/24の意味も答えなさい。</p>
+      <p class="question-prompt">サブネットではIPアドレスのどの部分をネットワーク部として使うか。また、分けたネットワークの数と1つのネットワークのホスト数はどう変化するか説明しなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -3984,12 +4007,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">資料では、サブネットはクラスで決まるホスト部の一部を借りてネットワークを細分化する考え方、CIDRはクラスA/B/Cの境界に縛られずプレフィックス長でネットワーク部を決める考え方である。/24は先頭24ビットがネットワーク部で、255.255.255.0に相当する。</p>
-          <p class="explanation-text">現在の実運用ではCIDR表記を基本としてアドレス範囲を扱う。</p>
+          <p class="answer-text">ホスト部の一部を、新しいネットワーク部として使う。ネットワークの数は増えるが、ホスト部が少なくなるため、1つのネットワークに入るホスト数は減る。</p>
+          <p class="explanation-text">ネットワーク部を増やす分だけ、ホスト部が短くなる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - サブネット / CIDR</span>
+              <span>ネットワーク層 - サブネットの仕組み</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -3997,7 +4020,7 @@
         <li>
           <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.3-5</span>
+          <span>PDF p.3-4</span>
         </li></ul>
             </div>
           </div>
@@ -4005,7 +4028,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q78" data-question-type="四択" data-search-text="目的サーバまでに通過する中継ルータを順に確認したい。windowsで最も適切なコマンドはどれか。 c. tracert 宛先 運用確認 - tracert">
+    <article class="question-card" data-question-id="q78" data-question-type="四択" data-search-text="目的のサーバまでの通信経路を確認したい。資料にあるコマンドのうち、最も適切なものはどれか。 c. tracert 宛先 運用確認 - tracert">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 71">Q.71</span>
@@ -4016,8 +4039,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">目的サーバまでに通過する中継ルータを順に確認したい。Windowsで最も適切なコマンドはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. ipconfig</li><li>B. arp -a</li><li>C. tracert 宛先</li><li>D. ping 127.0.0.1</li></ol>
+      <p class="question-prompt">目的のサーバまでの通信経路を確認したい。資料にあるコマンドのうち、最も適切なものはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. ipconfig</li><li>B. arp -a</li><li>C. tracert 宛先</li><li>D. ping 宛先</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -4026,7 +4049,7 @@
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
           <p class="answer-text">C. tracert 宛先</p>
-          <p class="explanation-text">TTLを段階的に変えた通信への応答を利用して経路上のホップを調べる。途中機器やISPの設定により応答しないホップもある。</p>
+          <p class="explanation-text">tracertは目的地までの通信経路を確認するために使う。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -4046,7 +4069,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q37" data-question-type="四択" data-search-text="ethernetの歴史・標準化の説明として正しいものはどれか。 b. xeroxで開発され、dec・intel・xeroxがdix仕様を策定し、ieeeでは802.3として標準化 データリンク層 - ethernet">
+    <article class="question-card" data-question-id="q37" data-question-type="四択" data-search-text="有線lanで広く使用され、ieee 802.3で標準化された規格はどれか。 a. ethernet（イーサネット） データリンク層 - ethernet">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 72">Q.72</span>
@@ -4057,8 +4080,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">Ethernetの歴史・標準化の説明として正しいものはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. IEEE 802.5として無線LANを標準化</li><li>B. Xeroxで開発され、DEC・Intel・XeroxがDIX仕様を策定し、IEEEでは802.3として標準化</li><li>C. ARPAが電話網専用として開発</li><li>D. RJ-11だけを媒体とする</li></ol>
+      <p class="question-prompt">有線LANで広く使用され、IEEE 802.3で標準化された規格はどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. Ethernet（イーサネット）</li><li>B. トークンリング</li><li>C. ブリッジ</li><li>D. ハブ</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -4066,8 +4089,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">B. Xeroxで開発され、DEC・Intel・XeroxがDIX仕様を策定し、IEEEでは802.3として標準化</p>
-          <p class="explanation-text">IEEE 802.5はToken Ring系で、Ethernetとは別のLAN標準である。</p>
+          <p class="answer-text">A. Ethernet（イーサネット）</p>
+          <p class="explanation-text">資料では、Ethernetを有線LANで広く使用される規格として説明している。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -4092,7 +4115,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q17" data-question-type="四択" data-search-text="100base-txで使うクロスケーブルの基本的な送受信ペアの交差として正しいものはどれか。 a. 1・2番と3・6番 lanケーブル - クロス配線">
+    <article class="question-card" data-question-id="q17" data-question-type="四択" data-search-text="資料のクロスケーブルで、片端の1番と2番は、相手側の何番につながるか。 a. 1番は3番、2番は6番 lanケーブル作成 - クロス配線">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 73">Q.73</span>
@@ -4103,8 +4126,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">100BASE-TXで使うクロスケーブルの基本的な送受信ペアの交差として正しいものはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. 1・2番と3・6番</li><li>B. 1・8番と4・5番</li><li>C. 2・7番と4・6番</li><li>D. すべてのピンを逆順</li></ol>
+      <p class="question-prompt">資料のクロスケーブルで、片端の1番と2番は、相手側の何番につながるか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. 1番は3番、2番は6番</li><li>B. 1番は1番、2番は2番</li><li>C. 1番は4番、2番は5番</li><li>D. 1番は7番、2番は8番</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -4112,12 +4135,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">A. 1・2番と3・6番</p>
-          <p class="explanation-text">T568AとT568Bを両端に使うと、オレンジ対と緑対が入れ替わり、送受信ペアが交差する。</p>
+          <p class="answer-text">A. 1番は3番、2番は6番</p>
+          <p class="explanation-text">資料では、1番と3番、2番と6番が入れ替わる配線になっている。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>LANケーブル - クロス配線</span>
+              <span>LANケーブル作成 - クロス配線</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -4138,7 +4161,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q43" data-question-type="正誤" data-search-text="token ringはethernetの一方式であり、ieee 802.3として標準化されている。正しいか。 誤り。token ringはethernetとは別のlan規格で、教材の範囲ではieee 802.5として扱う。 データリンク層 - token ringの位置付け">
+    <article class="question-card" data-question-id="q43" data-question-type="正誤" data-search-text="fddiは、光ファイバーを用いたリング型ネットワークである。正しいか。 正しい。 データリンク層 - fddi">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 74">Q.74</span>
@@ -4149,7 +4172,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">Token RingはEthernetの一方式であり、IEEE 802.3として標準化されている。正しいか。</p>
+      <p class="question-prompt">FDDIは、光ファイバーを用いたリング型ネットワークである。正しいか。</p>
       <ol class="choices" aria-label="選択肢"><li>正しい</li><li>誤り</li></ol>
       <details class="answer-details">
         <summary>
@@ -4158,12 +4181,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">誤り。Token RingはEthernetとは別のLAN規格で、教材の範囲ではIEEE 802.5として扱う。</p>
-          <p class="explanation-text">資料本文の『イーサネットの通信規格方式』という表現は単純化または誤記であり、公認カンペの注記どおり区別する。</p>
+          <p class="answer-text">正しい。</p>
+          <p class="explanation-text">資料では、FDDIを光ファイバーを用いたリング型ネットワークの例として挙げている。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>データリンク層 - Token Ringの位置付け</span>
+              <span>データリンク層 - FDDI</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -4172,11 +4195,6 @@
           <cite>NT21 配布資料 04 データリンク層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
           <span>PDF p.15</span>
-        </li>
-        <li>
-          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
-          <span aria-hidden="true">·</span>
-          <span>PDF p.1</span>
         </li></ul>
             </div>
           </div>
@@ -4184,7 +4202,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q70" data-question-type="計算" data-search-text="端末192.168.1.130/26が属するネットワークアドレス、ブロードキャストアドレス、利用可能ホスト範囲を求めなさい。 ネットワーク192.168.1.128、ブロードキャスト192.168.1.191、ホスト192.168.1.129-192.168.1.190。 ネットワーク層 - アドレス範囲計算">
+    <article class="question-card" data-question-id="q70" data-question-type="計算" data-search-text="この問題では資料の計算方法を使う。ネットワークアドレスが199.25.3.0、ブロードキャストアドレスが199.25.3.255と分かっている。端末に割り当て可能なホストアドレスの範囲を答えなさい。 199.25.3.1-199.25.3.254 ネットワーク層 - ホストアドレスの範囲">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 75">Q.75</span>
@@ -4195,7 +4213,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">端末192.168.1.130/26が属するネットワークアドレス、ブロードキャストアドレス、利用可能ホスト範囲を求めなさい。</p>
+      <p class="question-prompt">この問題では資料の計算方法を使う。ネットワークアドレスが199.25.3.0、ブロードキャストアドレスが199.25.3.255と分かっている。端末に割り当て可能なホストアドレスの範囲を答えなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -4204,20 +4222,20 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">ネットワーク192.168.1.128、ブロードキャスト192.168.1.191、ホスト192.168.1.129-192.168.1.190。</p>
-          <p class="explanation-text">/26のブロック幅は64で、.130は.128-.191のブロックに入る。</p>
+          <p class="answer-text">199.25.3.1-199.25.3.254</p>
+          <p class="explanation-text">ネットワークアドレスとブロードキャストアドレスを除いた範囲になる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - アドレス範囲計算</span>
+              <span>ネットワーク層 - ホストアドレスの範囲</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
               <ul>
         <li>
-          <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.6-10</span>
+          <span>PDF p.2</span>
         </li></ul>
             </div>
           </div>
@@ -4225,7 +4243,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q06" data-question-type="四択" data-search-text="『文字コード・圧縮形式など、データの表現形式』を主に扱うosi参照モデルの層はどれか。 b. プレゼンテーション層（第6層） osi参照モデル - 第6層">
+    <article class="question-card" data-question-id="q06" data-question-type="四択" data-search-text="文字コードや圧縮形式など、データの表現形式を扱うosi参照モデルの層はどれか。 b. プレゼンテーション層（第6層） osi参照モデル - プレゼンテーション層">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 76">Q.76</span>
@@ -4236,7 +4254,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">『文字コード・圧縮形式など、データの表現形式』を主に扱うOSI参照モデルの層はどれか。</p>
+      <p class="question-prompt">文字コードや圧縮形式など、データの表現形式を扱うOSI参照モデルの層はどれか。</p>
       <ol class="choices" aria-label="選択肢"><li>A. セッション層</li><li>B. プレゼンテーション層</li><li>C. トランスポート層</li><li>D. データリンク層</li></ol>
       <details class="answer-details">
         <summary>
@@ -4246,11 +4264,11 @@
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
           <p class="answer-text">B. プレゼンテーション層（第6層）</p>
-          <p class="explanation-text">セッション層は通信の確立・維持・切断、トランスポート層は信頼性、データリンク層は隣接機器間の転送を担当する。</p>
+          <p class="explanation-text">プレゼンテーション層は、文字コードなどのデータ表現を扱う。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>OSI参照モデル - 第6層</span>
+              <span>OSI参照モデル - プレゼンテーション層</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -4271,7 +4289,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q79" data-question-type="四択" data-search-text="wiresharkでpingの通信だけを絞り込みたい。表示フィルタ欄へ入力するものとして最も適切なのはどれか。 b. icmp 運用確認 - wireshark">
+    <article class="question-card" data-question-id="q79" data-question-type="四択" data-search-text="wiresharkの主な使い方として、資料にある説明はどれか。 a. pcやネットワーク機器に流れるパケットをキャプチャする 運用確認 - wireshark">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 77">Q.77</span>
@@ -4282,8 +4300,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">Wiresharkでpingの通信だけを絞り込みたい。表示フィルタ欄へ入力するものとして最も適切なのはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. http</li><li>B. icmp</li><li>C. rj45</li><li>D. nat</li></ol>
+      <p class="question-prompt">Wiresharkの主な使い方として、資料にある説明はどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. PCやネットワーク機器に流れるパケットをキャプチャする</li><li>B. プライベートIPアドレスをグローバルIPアドレスへ変換する</li><li>C. サブネットマスクを自動的に設定する</li><li>D. 電気信号を増幅してLANの接続距離を伸ばす</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -4291,8 +4309,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">B. icmp</p>
-          <p class="explanation-text">Wiresharkの表示フィルタ式ではプロトコル名icmp（小文字）を使う。pingはICMP Echo Request / Replyを利用する。キャプチャ停止後にProtocol列で並べ替える方法も資料に示されている。</p>
+          <p class="answer-text">A. PCやネットワーク機器に流れるパケットをキャプチャする</p>
+          <p class="explanation-text">Wiresharkは、流れているパケットを確認するためのソフトウェアである。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -4312,7 +4330,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q09" data-question-type="四択" data-search-text="osi層と代表的な機器の対応として誤っているものはどれか。 d. プレゼンテーション層 - リピータハブ osi参照モデル - 各層の機器">
+    <article class="question-card" data-question-id="q09" data-question-type="四択" data-search-text="物理層に対応する機器の組合せはどれか。 c. ハブとリピータ osi参照モデル - 各層の機器">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 78">Q.78</span>
@@ -4323,8 +4341,8 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">OSI層と代表的な機器の対応として誤っているものはどれか。</p>
-      <ol class="choices" aria-label="選択肢"><li>A. 物理層 - リピータ</li><li>B. データリンク層 - L2スイッチ</li><li>C. ネットワーク層 - ルータ</li><li>D. プレゼンテーション層 - リピータハブ</li></ol>
+      <p class="question-prompt">物理層に対応する機器の組合せはどれか。</p>
+      <ol class="choices" aria-label="選択肢"><li>A. ルータとL3スイッチ</li><li>B. L2スイッチとブリッジ</li><li>C. ハブとリピータ</li><li>D. ゲートウェイとルータ</li></ol>
       <details class="answer-details">
         <summary>
           <span class="summary-label">解答・解説を見る</span>
@@ -4332,8 +4350,8 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">D. プレゼンテーション層 - リピータハブ</p>
-          <p class="explanation-text">リピータハブは電気信号を再生・中継する物理層の機器である。</p>
+          <p class="answer-text">C. ハブとリピータ</p>
+          <p class="explanation-text">資料の対応表では、ハブとリピータが物理層の機器に分類されている。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
@@ -4348,9 +4366,9 @@
           <span>PDF p.8</span>
         </li>
         <li>
-          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.1</span>
+          <span>PDF p.3</span>
         </li></ul>
             </div>
           </div>
@@ -4358,7 +4376,7 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q68" data-question-type="計算" data-search-text="クラスbの172.16.0.0を、授業資料の規則で少なくとも1000個の利用可能ネットワークに分割し、ホスト数を最大にする。最適なマスクと1ネットワーク当たりの利用可能ホスト数を求めなさい。 /26、255.255.255.192、各62ホスト。 ネットワーク層 - クラスbのサブネット設計">
+    <article class="question-card" data-question-id="q68" data-question-type="計算" data-search-text="クラスcの220.100.1.0にサブネットマスク255.255.255.224を設定した。マスクの最後の8ビットは11100000である。サブネット数を求めなさい。ただし、この問題では資料の式「2^n−2」（nはサブネット用に借りたビット数）を使う。 6個 ネットワーク層 - サブネット数の計算">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 79">Q.79</span>
@@ -4369,7 +4387,7 @@
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">クラスBの172.16.0.0を、授業資料の規則で少なくとも1000個の利用可能ネットワークに分割し、ホスト数を最大にする。最適なマスクと1ネットワーク当たりの利用可能ホスト数を求めなさい。</p>
+      <p class="question-prompt">クラスCの220.100.1.0にサブネットマスク255.255.255.224を設定した。マスクの最後の8ビットは11100000である。サブネット数を求めなさい。ただし、この問題では資料の式「2^n−2」（nはサブネット用に借りたビット数）を使う。</p>
       
       <details class="answer-details">
         <summary>
@@ -4378,12 +4396,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">/26、255.255.255.192、各62ホスト。</p>
-          <p class="explanation-text">既定/16から10ビット借りると2^10-2=1022ネットワーク。残るホスト部は6ビットなので2^6-2=62。</p>
+          <p class="answer-text">6個</p>
+          <p class="explanation-text">サブネット用に借りたビットは3つ。この問題で使う資料の計算方法では、2^3-2=6個となる。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>ネットワーク層 - クラスBのサブネット設計</span>
+              <span>ネットワーク層 - サブネット数の計算</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -4391,7 +4409,12 @@
         <li>
           <cite>NT21 配布資料 06 ネットワーク層その2(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.11</span>
+          <span>PDF p.9</span>
+        </li>
+        <li>
+          <cite>NT評価課題公認カンペ_A4両面_最大化.pdf</cite>
+          <span aria-hidden="true">·</span>
+          <span>PDF p.2</span>
         </li></ul>
             </div>
           </div>
@@ -4399,18 +4422,18 @@
       </details>
     </article>
 
-    <article class="question-card" data-question-id="q29" data-question-type="穴埋め" data-search-text="教材の旧来型・半二重リピータハブ構成について表を埋めなさい。10base-tは最大（ a ）台・全体（ b ）m、100base-txは最大（ c ）台・教材図の全体（ d ）m。 a: 4、b: 500、c: 2、d: 205 物理層 - リピータハブの制限">
+    <article class="question-card" data-question-id="q29" data-question-type="計算" data-search-text="資料のhub接続図で、pcからhubまでが100m、hub同士の間が5m、もう一方のhubからpcまでが100mである。pc間の距離の合計を求めなさい。 205m 物理層 - hub接続図の距離">
       <div class="question-topline">
         <div class="question-identifiers">
           <span class="question-number" aria-label="問題 80">Q.80</span>
-          <span class="type-badge">穴埋め</span>
+          <span class="type-badge">計算</span>
         </div>
         <label class="mastery-check">
           <input type="checkbox" data-mastery-checkbox aria-label="この問題を習得済みにする">
           <span>できた</span>
         </label>
       </div>
-      <p class="question-prompt">教材の旧来型・半二重リピータハブ構成について表を埋めなさい。10BASE-Tは最大（ A ）台・全体（ B ）m、100BASE-TXは最大（ C ）台・教材図の全体（ D ）m。</p>
+      <p class="question-prompt">資料のHUB接続図で、PCからHUBまでが100m、HUB同士の間が5m、もう一方のHUBからPCまでが100mである。PC間の距離の合計を求めなさい。</p>
       
       <details class="answer-details">
         <summary>
@@ -4419,12 +4442,12 @@
         </summary>
         <div class="answer-panel">
           <p class="answer-kicker">解答例</p>
-          <p class="answer-text">A: 4、B: 500、C: 2、D: 205</p>
-          <p class="explanation-text">旧来の半二重・共有Ethernetに関する授業上の目安。100BASEの205 mは、100 m + Class IIリピータ間5 m + 100 mという教材図の条件である。資料外の補足ではClass Iリピータ1台の構成は最大200 mとされ、現代のスイッチドEthernetへこれらの値をそのまま適用しない。</p>
+          <p class="answer-text">205m</p>
+          <p class="explanation-text">100m + 5m + 100m = 205mである。</p>
           <div class="answer-meta">
             <div class="range-row">
               <span class="meta-label">範囲</span>
-              <span>物理層 - リピータハブの制限</span>
+              <span>物理層 - HUB接続図の距離</span>
             </div>
             <div class="source-row">
               <span class="meta-label">参照</span>
@@ -4432,7 +4455,7 @@
         <li>
           <cite>NT21 配布資料 02物理層(2枚Ver).pdf</cite>
           <span aria-hidden="true">·</span>
-          <span>PDF p.23-24</span>
+          <span>PDF p.24</span>
         </li>
         <li>
           <cite>NT21 配布資料 02物理層(6枚Ver).pdf</cite>
@@ -4448,24 +4471,13 @@
     <p class="empty-state" id="emptyState" hidden>条件に一致する問題はありません。検索語または絞り込みを変更してください。</p>
 
     <section class="method-card" aria-labelledby="method-title">
-      <h2 id="method-title">正確性と資料の扱い</h2>
-      <p>この問題集は配布PDFを<strong>テスト範囲ノート</strong>として使い、空欄は公認カンペと一般的なネットワーク知識で補完しました。試験で教材基準が指定される計算はその答えを先に示し、現在の標準と異なる場合は注記しています。</p>
+      <h2 id="method-title">出題範囲と資料の扱い</h2>
+      <p>出題に使う専門用語と基本事項は、配布PDFと公認カンペに記載されたものに限定しました。空欄は公認カンペの説明で確認し、外部資料による発展的な内容は加えていません。</p>
       <ul>
-        <li>授業のサブネット数は、全0・全1サブネットを除く旧来の <code>2^n - 2</code> を使う設問があります。現代のCIDRでは通常すべてのサブネットを利用できます。</li>
-        <li>MACアドレスの「変更不可・世界で唯一」は基礎説明としては有用ですが、ローカル管理・仮想化・ランダム化があるため絶対ではありません。</li>
-        <li>Token RingはEthernetではなく別規格です。また、全二重スイッチドEthernetでは通常CSMA/CDを使いません。</li>
-        <li>NAT/NAPTは授業上の1対1／1対多という定義を示しつつ、一般用語ではNATが変換全般を指す場合があることも補足しました。</li>
+        <li>説明問題は、資料にある意味・違い・理由を1〜2点答える内容です。</li>
+        <li>計算方法が指定されている問題では、問題文に示した資料の計算方法を使ってください。</li>
+        <li>各解答の「PDF p.」は、PDFファイルの先頭から数えたページ番号です。</li>
       </ul>
-      <div class="reference-links" aria-label="補完に使った一次資料">
-        <a href="https://www.rfc-editor.org/rfc/rfc1918.html" target="_blank" rel="noreferrer">RFC 1918 · Private Address</a>
-        <a href="https://www.rfc-editor.org/rfc/rfc4632.html" target="_blank" rel="noreferrer">RFC 4632 · CIDR</a>
-        <a href="https://www.rfc-editor.org/rfc/rfc1878.html" target="_blank" rel="noreferrer">RFC 1878 · Subnet Table</a>
-        <a href="https://www.rfc-editor.org/rfc/rfc826.html" target="_blank" rel="noreferrer">RFC 826 · ARP</a>
-        <a href="https://www.rfc-editor.org/rfc/rfc1122.html" target="_blank" rel="noreferrer">RFC 1122 · Loopback</a>
-        <a href="https://www.rfc-editor.org/rfc/rfc3021.html" target="_blank" rel="noreferrer">RFC 3021 · /31</a>
-        <a href="https://www.rfc-editor.org/rfc/rfc792.html" target="_blank" rel="noreferrer">RFC 792 · ICMP</a>
-        <a href="https://standards.ieee.org/ieee/802.3/6003/" target="_blank" rel="noreferrer">IEEE 802.3 · Ethernet</a>
-      </div>
       <details>
         <summary>参照した8個のPDF</summary>
         <ol class="source-list">
@@ -4488,8 +4500,8 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span>NT21 NETWORK PRACTICE 80</span>
-      <span>Built from 86 source pages · 2026-09-03</span>
+      <span>NT21 ネットワーク演習80問</span>
+      <span>授業範囲版 · 2026-09-03 改訂</span>
     </div>
   </footer>
 
@@ -4497,7 +4509,7 @@
     (() => {
       "use strict";
 
-      const storageKey = "nt21-network-practice-progress-v1";
+      const storageKey = "nt21-network-practice-progress-classroom-v2";
       const list = document.getElementById("questions");
       const cards = () => Array.from(list.querySelectorAll(".question-card"));
       const progressValue = document.getElementById("progressValue");
